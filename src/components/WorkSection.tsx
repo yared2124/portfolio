@@ -1,5 +1,5 @@
 import React from 'react'
-import { Project } from '../data/portfolioData'
+import type { Project } from '../data/portfolioData'
 import { Icon } from './Icons'
 
 interface WorkSectionProps {

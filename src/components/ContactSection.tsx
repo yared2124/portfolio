@@ -1,5 +1,5 @@
 import React from 'react'
-import { SocialLink } from '../data/portfolioData'
+import type { SocialLink } from '../data/portfolioData'
 import { Icon } from './Icons'
 
 interface ContactSectionProps {

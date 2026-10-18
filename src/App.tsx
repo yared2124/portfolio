@@ -10,10 +10,10 @@ import { AiAssistant } from './components/AiAssistant'
 
 export function App() {
   const [isDark, setIsDark] = useState<boolean>(() => {
-    if (typeof window === 'undefined') return false
+    if (typeof window === 'undefined') return true
     const saved = window.localStorage.getItem('portfolio-theme')
     if (saved) return saved === 'dark'
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
+    return true
   })
 
   // Synchronize pointer glow coordinates

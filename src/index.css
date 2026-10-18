@@ -45,6 +45,8 @@ body {
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  background-color: var(--paper);
+  color: var(--ink);
 }
 
 /* Background Grain Texture */

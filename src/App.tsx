@@ -34,7 +34,7 @@ export function App() {
     window.localStorage.setItem('portfolio-theme', theme)
   }, [isDark])
 
-  const { profile, projects, stack, services, socials, defaultAiMessage, aiResponses } =
+  const { profile, projects, stack, techCategories, services, socials, defaultAiMessage, aiResponses } =
     portfolioData
 
   return (
@@ -45,6 +45,7 @@ export function App() {
 
       {/* Navigation */}
       <Navbar
+        name={profile.name}
         initials={profile.initials}
         isDark={isDark}
         onToggleTheme={() => setIsDark((prev) => !prev)}
@@ -52,18 +53,18 @@ export function App() {
 
       {/* Hero Section */}
       <Hero
+        name={profile.name}
         role={profile.role}
         location={profile.location}
-        headline={profile.heroHeadline}
-        subheadline={profile.heroSubheadline}
         bio={profile.heroBio}
+        avatar={profile.avatar}
       />
 
       {/* 01 / Selected Work */}
       <WorkSection projects={projects} />
 
-      {/* Technology Stack Marquee */}
-      <TechStack stack={stack} />
+      {/* Technology Stack & Tools */}
+      <TechStack categories={techCategories} stack={stack} />
 
       {/* 02 / Approach & Philosophy */}
       <AboutSection

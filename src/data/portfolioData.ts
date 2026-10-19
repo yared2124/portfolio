@@ -207,7 +207,7 @@ export const portfolioData: PortfolioData = {
       ],
       tags: ["Next.js", "TypeScript", "Distributed Systems", "Tailwind CSS", "Go", "Python"],
       imageUrl: "/backend-roadmap.png",
-      liveUrl: "https://github.com/yared2124/Roadmap-Backend-Engineers",
+      liveUrl: "https://roadmap-backend-engineers.vercel.app",
       githubUrl: "https://github.com/yared2124/Roadmap-Backend-Engineers",
     },
     {

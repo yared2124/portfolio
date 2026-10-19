@@ -139,8 +139,18 @@ export const WorkSection: React.FC<WorkSectionProps> = ({ projects }) => {
                   <a
                     className="project-link-btn"
                     href={project.liveUrl || '#'}
-                    aria-label={`Explore ${project.title}`}
-                    title={`Explore ${project.title}`}
+                    target={project.liveUrl?.startsWith('http') ? '_blank' : undefined}
+                    rel={project.liveUrl?.startsWith('http') ? 'noreferrer' : undefined}
+                    aria-label={
+                      project.liveUrl?.includes('linkedin')
+                        ? `Watch ${project.title} video demo on LinkedIn`
+                        : `Explore ${project.title}`
+                    }
+                    title={
+                      project.liveUrl?.includes('linkedin')
+                        ? 'Watch video demo on LinkedIn'
+                        : `Explore ${project.title}`
+                    }
                   >
                     <Icon name="arrow" size={20} />
                   </a>

@@ -26,6 +26,15 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       <div className="hero-main">
+        <div className="hero-body">
+          <span className="hero-greeting">CREATIVE TECHNOLOGIST & ENGINEER</span>
+          <h1 className="hero-name">
+            {name}
+            <span className="hero-name-period">.</span>
+          </h1>
+          <p className="hero-bio">{bio}</p>
+        </div>
+
         <div className="hero-avatar-frame">
           <div className="hero-avatar-glow" aria-hidden="true" />
           <div className="hero-avatar-circle">
@@ -38,15 +47,6 @@ export const Hero: React.FC<HeroProps> = ({
               loading="eager"
             />
           </div>
-        </div>
-
-        <div className="hero-body">
-          <span className="hero-greeting">CREATIVE TECHNOLOGIST & ENGINEER</span>
-          <h1 className="hero-name">
-            {name}
-            <span className="hero-name-period">.</span>
-          </h1>
-          <p className="hero-bio">{bio}</p>
         </div>
       </div>
 

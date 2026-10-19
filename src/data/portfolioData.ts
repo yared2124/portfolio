@@ -3,8 +3,10 @@ export interface Project {
   title: string
   type: string
   description: string
+  extendedDescription?: string[]
   tags: string[]
-  visualType: 'neura' | 'form' | 'synapse'
+  visualType?: 'neura' | 'form' | 'synapse' | 'image'
+  imageUrl?: string
   liveUrl?: string
   githubUrl?: string
 }
@@ -51,9 +53,17 @@ export interface PortfolioData {
   socials: SocialLink[]
   aiResponses: Record<string, string>
   defaultAiMessage: string
+  stats?: {
+    counterKey?: string
+    label?: string
+  }
 }
 
 export const portfolioData: PortfolioData = {
+  stats: {
+    counterKey: "yared-aregayehu-portfolio-views",
+    label: "Views",
+  },
   profile: {
     name: "Yared Aregayehu",
     initials: "YA",
@@ -168,29 +178,61 @@ export const portfolioData: PortfolioData = {
   projects: [
     {
       number: "01",
+      title: "VideoTrust AI",
+      type: "AI INTELLIGENCE & EXTENSION",
+      description: "Real-time YouTube integrity intelligence engine and Manifest V3 extension. Detects clickbait, uncovers bot manipulation, and computes explainable trust scores using Gemini embeddings in under 2 seconds.",
+      extendedDescription: [
+        "Sub-2-Second Ingestion Pipeline: Scrapes up to 1,000 raw comments, video metadata, and transcripts via InnerTube without consuming YouTube API quotas.",
+        "Semantic Clickbait Engine: Calculates high-dimensional cosine distance between video titles and spoken transcript text via Google Gemini embeddings.",
+        "Bot-Ring Deduplication: Uses tri-bucket sampling and SimHash fingerprinting to eliminate copy-pasted bot comments and financial scam rings.",
+        "Manifest V3 Chrome Extension: Injects a zero-layout-shift (CLS) pill badge and a 440px sliding drawer styled in deep #1A1112 espresso obsidian glassmorphism.",
+        "Model Context Protocol (MCP) Server: Exposes automated video verification tools directly to Claude Desktop, Cursor, and Antigravity IDE.",
+      ],
+      tags: ["TypeScript", "Fastify", "Gemini AI", "Manifest V3", "Redis", "Docker"],
+      imageUrl: "/videotrust.png",
+      liveUrl: "https://github.com/yared2124/VideoTrust-AI-",
+      githubUrl: "https://github.com/yared2124/VideoTrust-AI-",
+    },
+    {
+      number: "02",
       title: "Neura",
       type: "AI EXPERIENCE",
       description: "An adaptive learning environment that dynamically reshapes its mental models around the way each human mind learns.",
+      extendedDescription: [
+        "Real-time semantic knowledge graph that reorganizes node clusters based on user comprehension velocity.",
+        "Interactive HTML5 Canvas spatial environment with custom physics-based edge spring simulations.",
+        "Local-first state architecture with encrypted offline caching and seamless cloud synchronization.",
+      ],
       tags: ["TypeScript", "React", "AI Agent", "Canvas API"],
       visualType: "neura",
       liveUrl: "#",
       githubUrl: "https://github.com/yared2124",
     },
     {
-      number: "02",
+      number: "03",
       title: "FORM / 01",
       type: "GENERATIVE IDENTITY",
       description: "A living algorithmic identity system sculpted from audio input, kinetic velocity, and collective real-time telemetry.",
+      extendedDescription: [
+        "Custom GLSL procedural liquid-chrome shader responding dynamically to ambient audio frequencies.",
+        "Variable kinetic typography engine calculating letter-spacing and weight shifts from cursor trajectory.",
+        "SVG vector export pipeline allowing designers to freeze and capture generative artifacts for print media.",
+      ],
       tags: ["WebGL", "Generative Art", "Audio Reactive", "GLSL"],
       visualType: "form",
       liveUrl: "#",
       githubUrl: "https://github.com/yared2124",
     },
     {
-      number: "03",
+      number: "04",
       title: "Synapse",
       type: "PRODUCT DESIGN",
       description: "A zero-friction collaboration canvas where humans and autonomous AI models brainstorm and build side by side.",
+      extendedDescription: [
+        "Sub-50ms multiplayer synchronization engine built on WebSockets and conflict-free replicated data types (CRDTs).",
+        "Context-aware AI co-agent capable of synthesizing sprawling sticky-note clusters into structured architectural briefs.",
+        "Design system crafted with high-contrast tactile widgets, keyboard shortcut palettes, and fluid viewport navigation.",
+      ],
       tags: ["Product Design", "Next.js", "WebSockets", "Multiplayer"],
       visualType: "synapse",
       liveUrl: "#",
@@ -210,5 +252,7 @@ export const portfolioData: PortfolioData = {
     "are you available?": "Yes! Currently accepting select contract commissions, technical advisory roles, and high-impact design engineering projects for 2025/2026.",
     "why ai?": "Because computing is moving from static commands to fluid semantic intelligence. Building interfaces that feel alive requires reimagining how humans and models collaborate.",
     "what is your tech stack?": "My stack covers Frontend (JavaScript, TypeScript, React, Next.js, Tailwind CSS), Backend (Node.js, Express.js, NestJS, Supabase, PostgreSQL, MongoDB, Redis, GraphQL, Prisma), DevOps (Docker, Kubernetes, Vercel, GitHub Actions), and industry-standard toolchains (Git, GitHub, VS Code, Postman, Figma, Chrome DevTools, Slack).",
+    "tell me about videotrust ai": "VideoTrust AI is an AI-powered YouTube integrity system and Manifest V3 extension. It ingests video transcripts and comments in under 2 seconds, runs Gemini text embeddings to calculate title-transcript semantic divergence, detects bot farms, and produces an explainable Trust Score with WATCH, MAYBE, or SKIP verdicts.",
+    "what are your latest projects?": "My featured work includes VideoTrust AI (real-time YouTube clickbait and bot detection), Neura (adaptive learning models), FORM / 01 (generative identity), and Synapse (human-AI collaboration canvas).",
   },
 }

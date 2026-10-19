@@ -47,7 +47,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         </div>
 
         <footer>
-          <span>© {currentYear} Yared Aregayehu. All rights reserved.</span>
+          <span>© {currentYear} {name}. All rights reserved.</span>
           <a href="#top">BACK TO TOP ↑</a>
         </footer>
       </div>

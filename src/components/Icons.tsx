@@ -16,6 +16,8 @@ export interface IconProps {
     | 'telegram'
     | 'external'
     | 'verified'
+    | 'eye'
+    | 'activity'
   size?: number
   className?: string
 }
@@ -263,6 +265,43 @@ export const Icon: React.FC<IconProps> = ({ name, size = 18, className }) => {
             d="M10.2 16.2l-3.5-3.5 1.4-1.4 2.1 2.1 5.6-5.6 1.4 1.4-7 7z"
             fill="#FFFFFF"
           />
+        </svg>
+      )
+
+    case 'eye':
+      return (
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height={size}
+          viewBox="0 0 24 24"
+          width={size}
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.8"
+          className={className}
+        >
+          <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+      )
+
+    case 'activity':
+      return (
+        <svg
+          aria-hidden="true"
+          fill="none"
+          height={size}
+          viewBox="0 0 24 24"
+          width={size}
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.8"
+          className={className}
+        >
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
         </svg>
       )
 

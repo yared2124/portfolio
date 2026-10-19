@@ -34,7 +34,7 @@ export function App() {
     window.localStorage.setItem('portfolio-theme', theme)
   }, [isDark])
 
-  const { profile, projects, stack, techCategories, services, socials, defaultAiMessage, aiResponses } =
+  const { profile, projects, stack, techCategories, services, socials, defaultAiMessage, aiResponses, stats } =
     portfolioData
 
   return (
@@ -49,6 +49,7 @@ export function App() {
         initials={profile.initials}
         isDark={isDark}
         onToggleTheme={() => setIsDark((prev) => !prev)}
+        stats={stats}
       />
 
       {/* Hero Section */}

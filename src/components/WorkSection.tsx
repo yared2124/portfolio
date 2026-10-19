@@ -6,10 +6,24 @@ interface WorkSectionProps {
   projects: Project[]
 }
 
-const ProjectVisual: React.FC<{ type: Project['visualType']; title: string }> = ({
-  type,
-  title,
-}) => {
+const ProjectVisual: React.FC<{
+  type?: Project['visualType']
+  title: string
+  imageUrl?: string
+}> = ({ type, title, imageUrl }) => {
+  if (imageUrl) {
+    return (
+      <div className="project-image-wrapper">
+        <img
+          src={imageUrl}
+          alt={title}
+          className="project-image-img"
+          loading="lazy"
+        />
+      </div>
+    )
+  }
+
   switch (type) {
     case 'neura':
       return (
@@ -48,6 +62,15 @@ const ProjectVisual: React.FC<{ type: Project['visualType']; title: string }> = 
 }
 
 export const WorkSection: React.FC<WorkSectionProps> = ({ projects }) => {
+  const [expandedProjects, setExpandedProjects] = React.useState<Record<string, boolean>>({})
+
+  const toggleExpand = (title: string) => {
+    setExpandedProjects((prev) => ({
+      ...prev,
+      [title]: !prev[title],
+    }))
+  }
+
   return (
     <section className="work-section shell" id="work">
       <div className="section-heading">
@@ -56,21 +79,57 @@ export const WorkSection: React.FC<WorkSectionProps> = ({ projects }) => {
       </div>
 
       <div className="project-list">
-        {projects.map((project) => (
-          <article className="project" key={project.title}>
-            <div className="project-visual">
-              <ProjectVisual type={project.visualType} title={project.title} />
-            </div>
+        {projects.map((project) => {
+          const isExpanded = Boolean(expandedProjects[project.title])
 
-            <div className="project-info">
-              <span className="project-number">{project.number}</span>
+          return (
+            <article className="project" key={project.title}>
+              <div className="project-visual">
+                <ProjectVisual
+                  type={project.visualType}
+                  title={project.title}
+                  imageUrl={project.imageUrl}
+                />
+              </div>
 
-              <div className="project-details">
-                <span className="project-type">{project.type}</span>
-                <h2>{project.title}</h2>
-                <p>{project.description}</p>
+              <div className="project-info">
+                <span className="project-number">{project.number}</span>
 
-                <div className="project-tags">
+                <div className="project-details">
+                  <span className="project-type">{project.type}</span>
+                  <h2>{project.title}</h2>
+                  <p>{project.description}</p>
+
+                  {project.extendedDescription && project.extendedDescription.length > 0 && (
+                    <div className="project-read-more-wrap">
+                      <button
+                        type="button"
+                        className={`project-read-more-btn ${isExpanded ? 'active' : ''}`}
+                        onClick={() => toggleExpand(project.title)}
+                        aria-expanded={isExpanded}
+                      >
+                        <span className="read-more-icon">
+                          <Icon name={isExpanded ? 'close' : 'plus'} size={11} />
+                        </span>
+                        <span>{isExpanded ? 'READ LESS' : 'READ MORE DETAILS'}</span>
+                      </button>
+
+                      {isExpanded && (
+                        <div className="project-extended-desc">
+                          <ul>
+                            {project.extendedDescription.map((item, idx) => (
+                              <li key={idx}>
+                                <span className="bullet-dash" aria-hidden="true">/</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  <div className="project-tags">
                   {project.tags.map((tag) => (
                     <span key={tag}>{tag}</span>
                   ))}
@@ -102,7 +161,7 @@ export const WorkSection: React.FC<WorkSectionProps> = ({ projects }) => {
               </div>
             </div>
           </article>
-        ))}
+        )})}
       </div>
     </section>
   )

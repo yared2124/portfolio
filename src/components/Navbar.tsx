@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import { Icon } from './Icons'
+import { VisitorCounter } from './VisitorCounter'
 
 interface NavbarProps {
   name?: string
   initials?: string
   isDark: boolean
   onToggleTheme: () => void
+  stats?: {
+    counterKey?: string
+    label?: string
+  }
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   name = 'Yared Aregayehu',
   isDark,
   onToggleTheme,
+  stats,
 }) => {
   const [scrolled, setScrolled] = useState<boolean>(false)
 
@@ -42,6 +48,8 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         <div className="nav-actions">
+          <VisitorCounter counterKey={stats?.counterKey} label={stats?.label} />
+
           <a className="availability" href="#contact">
             <span className="availability-dot" />
             <span>Available for work</span>

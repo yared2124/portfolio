@@ -195,6 +195,23 @@ export const portfolioData: PortfolioData = {
     },
     {
       number: "02",
+      title: "Backend Engineer Hub",
+      type: "SYSTEMS & OPEN LEARNING",
+      description: "An open-access roadmap and interactive platform built to help engineers move past toy CRUD apps to architecting resilient, high-throughput distributed systems.",
+      extendedDescription: [
+        "7 Mastery Phases & 31 Deep-Dives: Progresses from CPU/RAM latency and raw TCP/IP sockets to distributed locks, transactional outboxes, and multi-region databases.",
+        "Multi-Language Blueprints: 93 production implementations provided side-by-side in Go, TypeScript (Node.js), and Python.",
+        "7 Production Capstones: Step-by-step specifications for industry-grade projects like reverse proxies, double-entry financial ledgers, and zero-trust IAM gateways.",
+        "Interactive Interview Simulator: 93 technical oral defense questions with timed evaluation rubrics to sharpen staff-level whiteboard communication.",
+        "Zero-Barrier Access: No logins, paywalls, or tracking cookies—with keyboard shortcuts (⌘K command palette) and full local storage sync.",
+      ],
+      tags: ["Next.js", "TypeScript", "Distributed Systems", "Tailwind CSS", "Go", "Python"],
+      imageUrl: "/backend-roadmap.png",
+      liveUrl: "https://github.com/yared2124/Roadmap-Backend-Engineers",
+      githubUrl: "https://github.com/yared2124/Roadmap-Backend-Engineers",
+    },
+    {
+      number: "03",
       title: "Neura",
       type: "AI EXPERIENCE",
       description: "An adaptive learning environment that dynamically reshapes its mental models around the way each human mind learns.",
@@ -209,7 +226,7 @@ export const portfolioData: PortfolioData = {
       githubUrl: "https://github.com/yared2124",
     },
     {
-      number: "03",
+      number: "04",
       title: "FORM / 01",
       type: "GENERATIVE IDENTITY",
       description: "A living algorithmic identity system sculpted from audio input, kinetic velocity, and collective real-time telemetry.",
@@ -224,7 +241,7 @@ export const portfolioData: PortfolioData = {
       githubUrl: "https://github.com/yared2124",
     },
     {
-      number: "04",
+      number: "05",
       title: "Synapse",
       type: "PRODUCT DESIGN",
       description: "A zero-friction collaboration canvas where humans and autonomous AI models brainstorm and build side by side.",
@@ -253,6 +270,7 @@ export const portfolioData: PortfolioData = {
     "why ai?": "Because computing is moving from static commands to fluid semantic intelligence. Building interfaces that feel alive requires reimagining how humans and models collaborate.",
     "what is your tech stack?": "My stack covers Frontend (JavaScript, TypeScript, React, Next.js, Tailwind CSS), Backend (Node.js, Express.js, NestJS, Supabase, PostgreSQL, MongoDB, Redis, GraphQL, Prisma), DevOps (Docker, Kubernetes, Vercel, GitHub Actions), and industry-standard toolchains (Git, GitHub, VS Code, Postman, Figma, Chrome DevTools, Slack).",
     "tell me about videotrust ai": "VideoTrust AI is an AI-powered YouTube integrity system and Manifest V3 extension. It ingests video transcripts and comments in under 2 seconds, runs Gemini text embeddings to calculate title-transcript semantic divergence, detects bot farms, and produces an explainable Trust Score with WATCH, MAYBE, or SKIP verdicts.",
-    "what are your latest projects?": "My featured work includes VideoTrust AI (real-time YouTube clickbait and bot detection), Neura (adaptive learning models), FORM / 01 (generative identity), and Synapse (human-AI collaboration canvas).",
+    "tell me about backend engineer hub": "Backend Engineer Hub is an open-access learning platform and master roadmap for distributed systems engineers. It spans 7 architectural phases, 31 deep-dives, 93 multi-language blueprints (Go, TypeScript, Python), 7 industry capstones, and an interactive oral interview defense simulator.",
+    "what are your latest projects?": "My featured work includes VideoTrust AI (real-time YouTube clickbait and bot detection), Backend Engineer Hub (open-access distributed systems roadmap), Neura (adaptive learning models), FORM / 01 (generative identity), and Synapse (human-AI collaboration canvas).",
   },
 }

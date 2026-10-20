@@ -36,9 +36,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
           </div>
 
           <h2 className="about-compact-title">
-            SYSTEMS &amp;
-            <br />
-            <em>INTELLIGENCE</em>
+            SYSTEMS &amp; INTELLIGENCE
             <br />
             WITH PURPOSE.
           </h2>

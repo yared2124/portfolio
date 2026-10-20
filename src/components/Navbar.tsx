@@ -41,7 +41,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </a>
 
         <div className="nav-links">
-          <a href="#work">Work</a>
+          <a href="#work">Projects</a>
           <a href="#skills">Skills</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
@@ -49,11 +49,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         <div className="nav-actions">
           <VisitorCounter counterKey={stats?.counterKey} label={stats?.label} />
-
-          <a className="availability" href="#contact">
-            <span className="availability-dot" />
-            <span>Available for work</span>
-          </a>
 
           <button
             className="theme-toggle"

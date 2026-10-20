@@ -85,7 +85,7 @@ export const portfolioData: PortfolioData = {
     initials: "Y",
     avatar: "/profile.jpg",
     role: "Software Engineer · Backend & AI Systems",
-    location: "Available Worldwide · Remote",
+    location: "Available for Remote work",
     heroHeadline: "FUTURES",
     heroSubheadline: "with intelligence",
     heroBio: "I'm Yared — a software engineer building robust backend systems, modern full-stack web apps, and applied AI tooling.",

@@ -52,16 +52,16 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       <div className="hero-foot">
-        <div className="hero-status">
-          <span className="hero-status-dot" />
-          <span>Available for select engineering & design work</span>
+        <div className="hero-motto">
+          <span className="motto-line" aria-hidden="true" />
+          <span className="motto-text">Work smarter, not harder</span>
+          <span className="motto-line" aria-hidden="true" />
         </div>
-        <a className="circle-link" href="#work" aria-label="Explore selected work">
+
+        <a className="circle-link" href="#work" aria-label="Explore selected projects">
           <Icon name="arrow" size={24} />
         </a>
       </div>
-
-      <div className="scroll-note">SCROLL TO EXPLORE</div>
     </section>
   )
 }

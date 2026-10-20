@@ -36,7 +36,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
           <div className="contact-meta-row">
             <span className="contact-meta-item">
-              <strong>LOCATION:</strong> Injibara University · Ethiopia (Remote Worldwide)
+              <strong>LOCATION:</strong> Available Worldwide · Remote
             </span>
             <span className="contact-meta-item">
               <strong>RESPONSE:</strong> Usually within 24 hours

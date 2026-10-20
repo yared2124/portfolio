@@ -24,7 +24,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
     <section className="about-section shell" id="about">
       <div className="section-heading light">
         <span>02 / ABOUT & PHILOSOPHY</span>
-        <p>Full-Stack Engineer & AI Systems Developer based in Addis Ababa.</p>
+        <p>Software Engineer · Backend Systems &amp; Applied AI</p>
       </div>
 
       <div className="about-grid">

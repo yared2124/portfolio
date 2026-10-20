@@ -88,7 +88,7 @@ export const portfolioData: PortfolioData = {
     location: "Available for Remote work",
     heroHeadline: "FUTURES",
     heroSubheadline: "with intelligence",
-    heroBio: "I'm Yared Aregayehu — a software engineer building robust backend systems, modern full-stack web apps, and applied AI tooling.",
+    heroBio: "I'm Yared — a software engineer building robust backend systems, modern full-stack web apps, and applied AI tooling.",
     aboutHeadline: "SYSTEMS &",
     aboutEmphasis: "INTELLIGENCE",
     aboutBio: "Software engineer operating at the intersection of backend systems architecture, modern full-stack engineering, and applied AI tooling.",

@@ -57,7 +57,7 @@ export function App() {
       <div className="main-content">
         {/* Hero Section */}
         <Hero
-          name={profile.name}
+          name="Yared"
           role={profile.role}
           location={profile.location}
           bio={profile.heroBio}

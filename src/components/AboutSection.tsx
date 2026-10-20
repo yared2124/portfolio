@@ -23,7 +23,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
   return (
     <section className="about-section shell" id="about">
       <div className="section-heading light">
-        <span>02 / ABOUT & PHILOSOPHY</span>
+        <span>03 / ABOUT & PHILOSOPHY</span>
         <p>Software Engineer · Backend Systems &amp; Applied AI</p>
       </div>
 

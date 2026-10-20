@@ -17,7 +17,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
       <div className="shell contact-inner">
         <div className="contact-body">
           <div className="contact-header-row">
-            <span className="contact-label">03 / GET IN TOUCH</span>
+            <span className="contact-label">04 / GET IN TOUCH</span>
             <div className="contact-status-pill">
               <span className="contact-status-dot" aria-hidden="true" />
               <span>AVAILABLE FOR OPPORTUNITIES</span>

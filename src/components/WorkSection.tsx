@@ -144,11 +144,13 @@ export const WorkSection: React.FC<WorkSectionProps> = ({ projects }) => {
                     aria-label={
                       project.liveUrl?.includes('linkedin')
                         ? `Watch ${project.title} video demo on LinkedIn`
-                        : `Explore ${project.title}`
+                        : `Visit live ${project.title}`
                     }
                     title={
                       project.liveUrl?.includes('linkedin')
                         ? 'Watch video demo on LinkedIn'
+                        : project.liveUrl?.startsWith('http')
+                        ? 'Visit live app'
                         : `Explore ${project.title}`
                     }
                   >

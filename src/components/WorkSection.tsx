@@ -191,6 +191,8 @@ export const WorkSection: React.FC<WorkSectionProps> = ({ projects }) => {
                       title={
                         project.liveUrl?.includes('linkedin')
                           ? 'Watch video demo on LinkedIn'
+                          : project.liveUrl?.includes('t.me')
+                          ? 'Launch Telegram Bot (@my_channel_vigil_bot)'
                           : project.liveUrl?.startsWith('http')
                           ? 'Visit live app'
                           : `Explore ${project.title}`

@@ -23,7 +23,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           <h2>
             LET'S BUILD
             <br />
-            SOMETHING <em>RESILIENT.</em>
+            SOMETHING RESILIENT.
           </h2>
 
           <p className="contact-subtext">

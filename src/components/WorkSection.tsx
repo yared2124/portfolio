@@ -81,7 +81,7 @@ export const WorkSection: React.FC<WorkSectionProps> = ({ projects }) => {
         viewport={{ once: true, margin: "0px 0px -60px 0px" }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
-        <span>01 / SELECTED PROJECTS</span>
+        <span>01 / PROJECTS</span>
         <p>Experiments in systems, autonomous intelligence, and human possibility.</p>
       </motion.div>
 

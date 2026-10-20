@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion, AnimatePresence } from 'motion/react'
 import type { Project } from '../data/portfolioData'
 import { Icon } from './Icons'
 
@@ -73,30 +74,63 @@ export const WorkSection: React.FC<WorkSectionProps> = ({ projects }) => {
 
   return (
     <section className="work-section shell" id="work">
-      <div className="section-heading">
+      <motion.div
+        className="section-heading"
+        initial={{ opacity: 0, y: 26 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "0px 0px -60px 0px" }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      >
         <span>01 / SELECTED WORK</span>
         <p>Experiments in systems, autonomous intelligence, and human possibility.</p>
-      </div>
+      </motion.div>
 
       <div className="project-list">
-        {projects.map((project) => {
+        {projects.map((project, index) => {
           const isExpanded = Boolean(expandedProjects[project.title])
+          const isRev = index % 2 === 1
 
           return (
-            <article className="project" key={project.title}>
-              <div className="project-visual">
+            <article
+              className={`project ${isRev ? 'project--rev' : ''}`}
+              key={project.title}
+            >
+              <motion.div
+                className="project-visual"
+                initial={{ opacity: 0, x: isRev ? 40 : -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              >
                 <ProjectVisual
                   type={project.visualType}
                   title={project.title}
                   imageUrl={project.imageUrl}
                 />
-              </div>
+              </motion.div>
 
-              <div className="project-info">
+              <motion.div
+                className="project-info"
+                initial={{ opacity: 0, x: isRev ? -40 : 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+              >
                 <span className="project-number">{project.number}</span>
 
                 <div className="project-details">
-                  <span className="project-type">{project.type}</span>
+                  <div className="project-meta-row">
+                    <span className="project-type">{project.type}</span>
+                    {project.timeline && (
+                      <span className="project-timeline">
+                        <span className="timeline-dot" aria-hidden="true" />
+                        {project.timeline}
+                      </span>
+                    )}
+                    {project.status && (
+                      <span className="project-status-pill">{project.status}</span>
+                    )}
+                  </div>
                   <h2>{project.title}</h2>
                   <p>{project.description}</p>
 
@@ -114,66 +148,75 @@ export const WorkSection: React.FC<WorkSectionProps> = ({ projects }) => {
                         <span>{isExpanded ? 'READ LESS' : 'READ MORE DETAILS'}</span>
                       </button>
 
-                      {isExpanded && (
-                        <div className="project-extended-desc">
-                          <ul>
-                            {project.extendedDescription.map((item, idx) => (
-                              <li key={idx}>
-                                <span className="bullet-dash" aria-hidden="true">/</span>
-                                <span>{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
+                      <AnimatePresence>
+                        {isExpanded && (
+                          <motion.div
+                            className="project-extended-desc"
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                          >
+                            <ul>
+                              {project.extendedDescription.map((item, idx) => (
+                                <li key={idx}>
+                                  <span className="bullet-dash" aria-hidden="true">/</span>
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   )}
 
                   <div className="project-tags">
-                  {project.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                </div>
+                    {project.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
 
-                <div className="project-actions">
-                  <a
-                    className="project-link-btn"
-                    href={project.liveUrl || '#'}
-                    target={project.liveUrl?.startsWith('http') ? '_blank' : undefined}
-                    rel={project.liveUrl?.startsWith('http') ? 'noreferrer' : undefined}
-                    aria-label={
-                      project.liveUrl?.includes('linkedin')
-                        ? `Watch ${project.title} video demo on LinkedIn`
-                        : `Visit live ${project.title}`
-                    }
-                    title={
-                      project.liveUrl?.includes('linkedin')
-                        ? 'Watch video demo on LinkedIn'
-                        : project.liveUrl?.startsWith('http')
-                        ? 'Visit live app'
-                        : `Explore ${project.title}`
-                    }
-                  >
-                    <Icon name="arrow" size={20} />
-                  </a>
-
-                  {project.githubUrl && (
+                  <div className="project-actions">
                     <a
                       className="project-link-btn"
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`View ${project.title} code on GitHub`}
-                      title="Source code"
+                      href={project.liveUrl || '#'}
+                      target={project.liveUrl?.startsWith('http') ? '_blank' : undefined}
+                      rel={project.liveUrl?.startsWith('http') ? 'noreferrer' : undefined}
+                      aria-label={
+                        project.liveUrl?.includes('linkedin')
+                          ? `Watch ${project.title} video demo on LinkedIn`
+                          : `Visit live ${project.title}`
+                      }
+                      title={
+                        project.liveUrl?.includes('linkedin')
+                          ? 'Watch video demo on LinkedIn'
+                          : project.liveUrl?.startsWith('http')
+                          ? 'Visit live app'
+                          : `Explore ${project.title}`
+                      }
                     >
-                      <Icon name="github" size={18} />
+                      <Icon name="arrow" size={20} />
                     </a>
-                  )}
+
+                    {project.githubUrl && (
+                      <a
+                        className="project-link-btn"
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`View ${project.title} code on GitHub`}
+                        title="Source code"
+                      >
+                        <Icon name="github" size={18} />
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </div>
-          </article>
-        )})}
+              </motion.div>
+            </article>
+          )
+        })}
       </div>
     </section>
   )

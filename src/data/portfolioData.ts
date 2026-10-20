@@ -2,6 +2,8 @@ export interface Project {
   number: string
   title: string
   type: string
+  timeline?: string
+  status?: string
   description: string
   extendedDescription?: string[]
   tags: string[]
@@ -212,18 +214,23 @@ export const portfolioData: PortfolioData = {
     },
     {
       number: "03",
-      title: "Neura",
-      type: "AI EXPERIENCE",
-      description: "An adaptive learning environment that dynamically reshapes its mental models around the way each human mind learns.",
+      title: "Church Management ERP",
+      type: "ENTERPRISE SYSTEM & PLATFORM",
+      timeline: "Aug 2026 – Present",
+      status: "In Progress",
+      description: "An ongoing Church Management ERP platform engineered for Birhane Genet Beata Lemaryam (started August 2026, currently under active development) to streamline parish administration, membership records, sacraments, property rentals, and church finances.",
       extendedDescription: [
-        "Real-time semantic knowledge graph that reorganizes node clusters based on user comprehension velocity.",
-        "Interactive HTML5 Canvas spatial environment with custom physics-based edge spring simulations.",
-        "Local-first state architecture with encrypted offline caching and seamless cloud synchronization.",
+        "Current Status (Aug 2026 – Present): Actively developing modular features progressively, starting from the core analytics dashboard and establishing the reusable design system.",
+        "Parish & Membership Management: Centralized directory for thousands of registered members, family units, and historical contribution tracking.",
+        "Sacraments & Registry: End-to-end administration for Baptism, Marriage, Burial, and official ecclesiastical certificate generation.",
+        "Financial Analytics & Accounting: Real-time dashboards monitoring monthly income (over 240k ETB/mo), expense tracking against budgets, and approval chains.",
+        "Properties & Tenant Leasing: Comprehensive management of church-owned properties, rental units, tenant contracts, and automated overdue rent alerts.",
+        "Modern Stack & Design System: Built with Next.js App Router, TypeScript, and a unified Tailwind CSS design-token system supporting both English and Amharic.",
       ],
-      tags: ["TypeScript", "React", "AI Agent", "Canvas API"],
-      visualType: "neura",
-      liveUrl: "#",
-      githubUrl: "https://github.com/yared2124",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma", "Docker"],
+      imageUrl: "/church-erp.png",
+      liveUrl: "https://github.com/yared2124/church-erp",
+      githubUrl: "https://github.com/yared2124/church-erp",
     },
     {
       number: "04",
@@ -271,6 +278,7 @@ export const portfolioData: PortfolioData = {
     "what is your tech stack?": "My stack covers Frontend (JavaScript, TypeScript, React, Next.js, Tailwind CSS), Backend (Node.js, Express.js, NestJS, Supabase, PostgreSQL, MongoDB, Redis, GraphQL, Prisma), DevOps (Docker, Kubernetes, Vercel, GitHub Actions), and industry-standard toolchains (Git, GitHub, VS Code, Postman, Figma, Chrome DevTools, Slack).",
     "tell me about videotrust ai": "VideoTrust AI is an AI-powered YouTube integrity system and Manifest V3 extension. It ingests video transcripts and comments in under 2 seconds, runs Gemini text embeddings to calculate title-transcript semantic divergence, detects bot farms, and produces an explainable Trust Score with WATCH, MAYBE, or SKIP verdicts.",
     "tell me about backend engineer hub": "Backend Engineer Hub is an open-access learning platform and master roadmap for distributed systems engineers. It spans 7 architectural phases, 31 deep-dives, 93 multi-language blueprints (Go, TypeScript, Python), 7 industry capstones, and an interactive oral interview defense simulator.",
-    "what are your latest projects?": "My featured work includes VideoTrust AI (real-time YouTube clickbait and bot detection), Backend Engineer Hub (open-access distributed systems roadmap), Neura (adaptive learning models), FORM / 01 (generative identity), and Synapse (human-AI collaboration canvas).",
+    "tell me about church erp": "Church Management ERP is a full enterprise parish administration platform developed for Birhane Genet Beata Lemaryam. It features centralized member & family registries, sacramental records (Baptism, Marriage, Burial), real-time financial accounting & budget analytics, and tenant leasing with automated payment alerts.",
+    "what are your latest projects?": "My featured work includes VideoTrust AI (real-time YouTube clickbait and bot detection), Backend Engineer Hub (open-access distributed systems roadmap), Church Management ERP (enterprise parish & financial platform), FORM / 01 (generative identity), and Synapse (human-AI collaboration canvas).",
   },
 }

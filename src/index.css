@@ -747,12 +747,25 @@ button {
 
 .project {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
-  gap: 40px;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: clamp(32px, 4.5vw, 56px);
   min-height: auto;
-  padding: 32px 0;
+  padding: 48px 0;
   border-bottom: 1px solid var(--line);
   align-items: center;
+}
+
+/* Alternating placement: odd projects place visual on the right and info on the left */
+.project--rev {
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
+}
+
+.project--rev .project-visual {
+  order: 2;
+}
+
+.project--rev .project-info {
+  order: 1;
 }
 
 .project-visual {
@@ -988,6 +1001,63 @@ button {
 
 [data-theme="dark"] .project-type {
   color: var(--acid);
+}
+
+.project-meta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-timeline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+  color: var(--ink);
+}
+
+.timeline-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--orange);
+  box-shadow: 0 0 0 2px rgba(255, 91, 53, 0.2);
+  animation: pulse-orange 2s infinite;
+}
+
+@keyframes pulse-orange {
+  0%, 100% {
+    box-shadow: 0 0 0 2px rgba(255, 91, 53, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(255, 91, 53, 0.08);
+  }
+}
+
+.project-status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  background-color: rgba(255, 91, 53, 0.1);
+  color: var(--orange);
+  border: 1px solid rgba(255, 91, 53, 0.35);
+  font-weight: 500;
+}
+
+[data-theme="dark"] .project-status-pill {
+  background-color: rgba(255, 103, 67, 0.14);
+  color: var(--orange);
+  border-color: rgba(255, 103, 67, 0.4);
 }
 
 .project-details h2 {
@@ -1936,10 +2006,19 @@ footer a:hover {
     height: 140px;
   }
 
-  .project {
+  .project,
+  .project--rev {
     grid-template-columns: 1fr;
     gap: 28px;
-    padding: 28px 0;
+    padding: 32px 0;
+  }
+
+  .project--rev .project-visual {
+    order: 0;
+  }
+
+  .project--rev .project-info {
+    order: 0;
   }
 
   .project-visual {

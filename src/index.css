@@ -88,8 +88,8 @@ body {
 /* Main Content Area (Side-padded, excluding Header and Footer) */
 .main-content {
   width: 100%;
-  padding-left: clamp(20px, 4vw, 56px);
-  padding-right: clamp(20px, 4vw, 56px);
+  padding-left: clamp(32px, 7vw, 100px);
+  padding-right: clamp(32px, 7vw, 100px);
   box-sizing: border-box;
 }
 

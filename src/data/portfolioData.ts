@@ -88,17 +88,17 @@ export const portfolioData: PortfolioData = {
     location: "Available for Remote work",
     heroHeadline: "FUTURES",
     heroSubheadline: "with intelligence",
-    heroBio: "Software engineer building robust backend systems, modern full-stack applications, and applied AI tooling.",
+    heroBio: "Software engineer with 2+ years of experience building robust backend systems, modern full-stack applications, and applied AI tooling.",
     aboutHeadline: "SYSTEMS &",
     aboutEmphasis: "INTELLIGENCE",
-    aboutBio: "Software engineer operating at the intersection of backend systems architecture, modern full-stack engineering, and applied AI tooling.",
+    aboutBio: "Software engineer with 2+ years of hands-on experience operating at the intersection of backend systems architecture, modern full-stack engineering, and applied AI tooling.",
     aboutStory: [
-      "I develop software with a terminal-first mindset on Arch Linux / Omarchy OS with the Hyprland tiling window manager. My core focus is architecting resilient backends, tuning relational and key-value databases, and integrating deterministic AI workflows.",
+      "With 2+ years of engineering experience, I develop software with a terminal-first mindset on Arch Linux / Omarchy OS with the Hyprland tiling window manager. My core focus is architecting resilient backends, tuning relational and key-value databases, and integrating deterministic AI workflows.",
       "My recent builds include promptHelper (AI prompt optimization platform), 'በህግ አምላክ' (Amharic legal assistant with FastAPI and ChromaDB RAG), PROPERTYMANAGER (RBAC-driven property platform), and omarchy-daily-focus (native desktop Linux utility).",
       "I am currently executing a rigorous 90-day backend engineering mastery curriculum covering advanced Linux systems, network protocols, Docker, PostgreSQL tuning, Redis caching, Kafka, and Kubernetes."
     ],
     aboutStats: [
-      { value: "Software Eng.", label: "Core Foundation" },
+      { value: "2+ Years", label: "Software Engineering" },
       { value: "90-Day", label: "Backend Mastery Track" },
       { value: "Arch + Hyprland", label: "Terminal-First Environment" },
       { value: "Backend + AI", label: "Core Specialization" },
@@ -325,7 +325,7 @@ export const portfolioData: PortfolioData = {
   ],
   defaultAiMessage: "I build robust backend systems, applied AI tooling, and modern full-stack web applications.",
   aiResponses: {
-    "who is yared?": "Yared Aregayehu is a Software Engineer operating at the intersection of backend systems architecture, modern full-stack engineering, and applied AI tooling on a customized Arch Linux / Hyprland rig.",
+    "who is yared?": "Yared Aregayehu is a Software Engineer with 2+ years of experience operating at the intersection of backend systems architecture, modern full-stack engineering, and applied AI tooling on a customized Arch Linux / Hyprland rig.",
     "what do you do?": "I architect scalable backend services with Node.js, Express, NestJS, and Java; design data layers with PostgreSQL, Redis, and Prisma; build frontends with React and Next.js; and develop applied AI tools with Gemini, ChromaDB, and RAG pipelines.",
     "tell me about yourself": "I'm a software engineer building terminal-first on Arch Linux, executing a 90-day backend engineering mastery curriculum, and creating practical tools like promptHelper, 'በህግ አምላክ' (Amharic legal RAG), and PROPERTYMANAGER.",
     "are you available?": "Yes! Open for software engineering internships, contract roles, and collaborative projects in backend architecture, full-stack development, and applied AI.",

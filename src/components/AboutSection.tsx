@@ -31,14 +31,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
         {/* Left Side: Profile & Environment Dossier */}
         <div className="about-profile-panel">
           <div className="about-panel-header">
-            <span className="about-status-dot" aria-hidden="true" />
             <span className="about-panel-tag">ENGINEER DOSSIER</span>
           </div>
 
           <h2 className="about-compact-title">
-            SYSTEMS &amp; INTELLIGENCE
-            <br />
-            WITH PURPOSE.
+            <span className="about-title-line">SYSTEMS &amp; INTELLIGENCE</span>
+            <span className="about-title-line">WITH PURPOSE.</span>
           </h2>
 
           <div className="about-terminal-tag">

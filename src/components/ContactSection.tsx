@@ -16,18 +16,32 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
     <section className="contact-section" id="contact">
       <div className="shell contact-inner">
         <div className="contact-body">
-          <span className="contact-label">03 / START SOMETHING</span>
+          <div className="contact-header-row">
+            <span className="contact-label">03 / GET IN TOUCH</span>
+            <div className="contact-status-pill">
+              <span className="contact-status-dot" aria-hidden="true" />
+              <span>AVAILABLE FOR OPPORTUNITIES</span>
+            </div>
+          </div>
 
           <h2>
-            HAVE AN IDEA
+            LET'S BUILD
             <br />
-            THAT FEELS <em>WEIRD?</em>
+            SOMETHING <em>RESILIENT.</em>
           </h2>
 
-          <a className="email-link" href={`mailto:${email}`}>
-            <span>{email}</span>
-            <Icon name="arrow" size={32} />
-          </a>
+          <p className="contact-subtext">
+            Whether you are looking to architect robust backend systems, deploy applied AI tooling, build modern full-stack web platforms, or explore technical collaboration—my inbox is always open.
+          </p>
+
+          <div className="contact-meta-row">
+            <span className="contact-meta-item">
+              <strong>LOCATION:</strong> Injibara University · Ethiopia (Remote Worldwide)
+            </span>
+            <span className="contact-meta-item">
+              <strong>RESPONSE:</strong> Usually within 24 hours
+            </span>
+          </div>
 
           <div className="social-links" aria-label="Social profiles and channels">
             {socials.map((link) => (

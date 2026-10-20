@@ -319,7 +319,7 @@ export const portfolioData: PortfolioData = {
   socials: [
     { name: "github", label: "GitHub", href: "https://github.com/yared2124" },
     { name: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/yared-aregayehu" },
-    { name: "upwork", label: "Upwork", href: "https://www.upwork.com/" },
+    { name: "upwork", label: "Upwork", href: "https://www.upwork.com/freelancers/~01d753e6390a3edfe6" },
     { name: "telegram", label: "Telegram", href: "https://t.me/" },
     { name: "mail", label: "Email", href: "mailto:yaredbaby21@gmail.com" },
   ],

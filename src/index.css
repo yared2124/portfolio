@@ -2014,8 +2014,18 @@ button {
 }
 
 .contact-inner {
-  padding-top: 120px;
-  padding-bottom: 96px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.contact-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 16px;
 }
 
 .contact-label {
@@ -2025,21 +2035,74 @@ button {
   text-transform: uppercase;
 }
 
-.contact-inner > h2 {
-  font-size: clamp(56px, 8.5vw, 130px);
-  font-weight: 700;
-  line-height: 0.92;
-  letter-spacing: -0.075em;
-  margin-top: 48px;
+.contact-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  padding: 4px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(217, 255, 67, 0.06);
 }
 
-.contact-inner > h2 em {
+.contact-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #6bcc3a;
+  box-shadow: 0 0 0 3px rgba(107, 204, 58, 0.25);
+}
+
+.contact-inner h2,
+.contact-body > h2 {
+  font-size: clamp(30px, 3.8vw, 54px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  margin-top: 24px;
+}
+
+.contact-inner h2 em,
+.contact-body > h2 em {
   font-style: italic;
   font-weight: 400;
   color: var(--violet);
 }
 
-[data-theme="dark"] .contact-inner > h2 em {
+[data-theme="dark"] .contact-inner h2 em,
+[data-theme="dark"] .contact-body > h2 em {
+  color: var(--acid);
+}
+
+.contact-subtext {
+  font-size: clamp(16px, 1.3vw, 21px);
+  line-height: 1.6;
+  max-width: 680px;
+  margin-top: 24px;
+  color: var(--ink);
+  opacity: 0.88;
+}
+
+.contact-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+}
+
+.contact-meta-item strong {
+  color: var(--violet);
+  margin-right: 4px;
+}
+
+[data-theme="dark"] .contact-meta-item strong {
   color: var(--acid);
 }
 
@@ -2049,9 +2112,9 @@ button {
   justify-content: space-between;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  padding: 28px 0;
-  margin-top: 64px;
-  font-size: clamp(22px, 3.4vw, 46px);
+  padding: 24px 0;
+  margin-top: 48px;
+  font-size: clamp(20px, 3.2vw, 42px);
   font-weight: 600;
   letter-spacing: -0.04em;
   transition: padding-left 0.25s ease;

@@ -121,17 +121,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
           </div>
         </div>
       )}
-
-      <div className="ticker" aria-hidden="true">
-        <div className="ticker-track">
-          <span>
-            DISTRIBUTED SYSTEMS — AI INTEGRATION — SCALABLE BACKENDS — CRAFTED INTERFACES —&nbsp;
-          </span>
-          <span>
-            DISTRIBUTED SYSTEMS — AI INTEGRATION — SCALABLE BACKENDS — CRAFTED INTERFACES —&nbsp;
-          </span>
-        </div>
-      </div>
     </section>
   )
 }

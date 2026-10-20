@@ -587,40 +587,17 @@ button {
 }
 
 .hero-avatar-frame:hover .hero-ring {
-  border-color: var(--acid);
-  opacity: 1;
+  border-color: var(--ink);
+  opacity: 0.85;
   transform: rotate(45deg);
 }
 
-[data-theme="light"] .hero-avatar-frame:hover .hero-ring {
-  border-color: var(--violet);
-}
-
-/* Ambient Radial Glow Blob */
+/* Ambient Radial Glow Blob - Removed for a completely color-free appearance */
 .hero-avatar-glow {
-  position: absolute;
-  z-index: 0;
-  inset: auto -16% -10% -16%;
-  height: 72%;
-  background: radial-gradient(circle at 35% 35%, var(--acid), transparent 70%);
-  filter: blur(34px);
-  border-radius: 50%;
-  opacity: 0.35;
-  pointer-events: none;
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  display: none;
 }
 
-[data-theme="light"] .hero-avatar-glow {
-  background: radial-gradient(circle at 35% 35%, var(--violet), transparent 70%);
-  opacity: 0.22;
-}
-
-.hero-avatar-frame:hover .hero-avatar-glow {
-  opacity: 0.75;
-  transform: scale(1.08);
-}
-
-/* Circular Photo Frame (Yostina Abera scale & gradient backdrop) */
+/* Circular Photo Frame (completely color-free neutral styling) */
 .hero-avatar-circle {
   position: relative;
   z-index: 2;
@@ -629,7 +606,7 @@ button {
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
-  background: linear-gradient(150deg, rgba(217, 255, 67, 0.12), rgba(116, 71, 255, 0.18));
+  background: rgba(128, 128, 128, 0.05);
   border: 2px solid var(--line);
   box-shadow:
     0 20px 45px -15px rgba(0, 0, 0, 0.35),
@@ -641,17 +618,8 @@ button {
 
 .hero-avatar-circle:hover {
   transform: scale(1.025);
-  border-color: var(--acid);
-  box-shadow:
-    0 28px 55px -15px rgba(0, 0, 0, 0.45),
-    0 0 0 2px var(--acid);
-}
-
-[data-theme="light"] .hero-avatar-circle:hover {
-  border-color: var(--violet);
-  box-shadow:
-    0 28px 55px -15px rgba(116, 71, 255, 0.3),
-    0 0 0 2px var(--violet);
+  border-color: var(--ink);
+  box-shadow: 0 28px 55px -15px rgba(0, 0, 0, 0.45);
 }
 
 /* Photo with Subdued Monochrome (Decreased Black & Lifted Brightness) */

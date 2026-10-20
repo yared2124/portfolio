@@ -6,6 +6,7 @@ import { WorkSection } from './components/WorkSection'
 import { TechStack } from './components/TechStack'
 import { AboutSection } from './components/AboutSection'
 import { ContactSection } from './components/ContactSection'
+import { Footer } from './components/Footer'
 import { AiAssistant } from './components/AiAssistant'
 
 export function App() {
@@ -43,7 +44,7 @@ export function App() {
       <div className="noise" aria-hidden="true" />
       <div className="cursor-glow" aria-hidden="true" />
 
-      {/* Navigation */}
+      {/* Navigation (Header) */}
       <Navbar
         name={profile.name}
         initials={profile.initials}
@@ -52,35 +53,41 @@ export function App() {
         stats={stats}
       />
 
-      {/* Hero Section */}
-      <Hero
-        name={profile.name}
-        role={profile.role}
-        location={profile.location}
-        bio={profile.heroBio}
-        avatar={profile.avatar}
-      />
+      {/* Main Content Area with left & right padding */}
+      <div className="main-content">
+        {/* Hero Section */}
+        <Hero
+          name={profile.name}
+          role={profile.role}
+          location={profile.location}
+          bio={profile.heroBio}
+          avatar={profile.avatar}
+        />
 
-      {/* 01 / Selected Work */}
-      <WorkSection projects={projects} />
+        {/* 01 / Selected Work */}
+        <WorkSection projects={projects} />
 
-      {/* Technology Stack & Tools */}
-      <TechStack categories={techCategories} stack={stack} />
+        {/* Technology Stack & Tools */}
+        <TechStack categories={techCategories} stack={stack} />
 
-      {/* 02 / Approach & Philosophy */}
-      <AboutSection
-        headline={profile.aboutHeadline}
-        emphasis={profile.aboutEmphasis}
-        bio={profile.aboutBio}
-        services={services}
-      />
+        {/* 02 / Approach & Philosophy */}
+        <AboutSection
+          headline={profile.aboutHeadline}
+          emphasis={profile.aboutEmphasis}
+          bio={profile.aboutBio}
+          services={services}
+        />
 
-      {/* 03 / Contact & Socials */}
-      <ContactSection
-        email={profile.email}
-        socials={socials}
-        name={profile.name}
-      />
+        {/* 03 / Contact & Socials */}
+        <ContactSection
+          email={profile.email}
+          socials={socials}
+          name={profile.name}
+        />
+      </div>
+
+      {/* Footer (Full Width, without main-content side padding) */}
+      <Footer name={profile.name} />
 
       {/* Floating AI Assistant ("ASK MY AI") */}
       <AiAssistant

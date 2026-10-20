@@ -5,16 +5,13 @@ import { Icon } from './Icons'
 interface ContactSectionProps {
   email: string
   socials: SocialLink[]
-  name: string
+  name?: string
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({
   email,
   socials,
-  name,
 }) => {
-  const currentYear = new Date().getFullYear()
-
   return (
     <section className="contact-section" id="contact">
       <div className="shell contact-inner">
@@ -47,11 +44,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             ))}
           </div>
         </div>
-
-        <footer>
-          <span>© {currentYear} {name}. All rights reserved.</span>
-          <a href="#top">BACK TO TOP ↑</a>
-        </footer>
       </div>
     </section>
   )

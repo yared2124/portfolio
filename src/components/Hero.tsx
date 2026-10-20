@@ -36,14 +36,15 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
 
         <div className="hero-avatar-frame">
+          <div className="hero-ring" aria-hidden="true" />
           <div className="hero-avatar-glow" aria-hidden="true" />
           <div className="hero-avatar-circle">
             <img
               src={avatar}
               alt={name}
               className="hero-avatar-img"
-              width={220}
-              height={220}
+              width={420}
+              height={420}
               loading="eager"
             />
           </div>

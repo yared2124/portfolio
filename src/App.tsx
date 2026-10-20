@@ -76,6 +76,9 @@ export function App() {
           emphasis={profile.aboutEmphasis}
           bio={profile.aboutBio}
           services={services}
+          story={profile.aboutStory}
+          stats={profile.aboutStats}
+          pillars={profile.aboutPillars}
         />
 
         {/* 03 / Contact & Socials */}

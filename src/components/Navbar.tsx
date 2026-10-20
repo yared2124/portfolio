@@ -14,7 +14,7 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  name = 'Yared Aregayehu',
+  name = 'Yared',
   isDark,
   onToggleTheme,
   stats,

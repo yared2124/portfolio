@@ -33,6 +33,17 @@ export interface TechCategory {
   items: TechItem[]
 }
 
+export interface AboutStat {
+  value: string
+  label: string
+}
+
+export interface AboutPillar {
+  number: string
+  title: string
+  desc: string
+}
+
 export interface PortfolioData {
   profile: {
     name: string
@@ -45,6 +56,9 @@ export interface PortfolioData {
     aboutHeadline: string
     aboutEmphasis: string
     aboutBio: string
+    aboutStory?: string[]
+    aboutStats?: AboutStat[]
+    aboutPillars?: AboutPillar[]
     email: string
     avatar?: string
   }
@@ -67,26 +81,59 @@ export const portfolioData: PortfolioData = {
     label: "Views",
   },
   profile: {
-    name: "Yared Aregayehu",
-    initials: "YA",
+    name: "Yared",
+    initials: "Y",
     avatar: "/profile.jpg",
-    role: "Designer + Creative Technologist",
-    location: "Based Everywhere",
+    role: "Software Engineer · Backend & AI Systems",
+    location: "Injibara University · Ethiopia",
     heroHeadline: "FUTURES",
     heroSubheadline: "with intelligence",
-    heroBio: "I'm Yared — an independent creative technologist building vivid identities, digital products, and impossible-feeling interfaces.",
-    aboutHeadline: "MAKING THE",
-    aboutEmphasis: "UNEXPECTED",
-    aboutBio: "I partner with ambitious teams to turn emerging technology into experiences people can feel. Strategy, architecture, interface, and motion — engineered as one coherent idea.",
-    email: "hello@yared.design",
+    heroBio: "I'm Yared — a software engineering student at Injibara University building robust backend systems, modern full-stack web apps, and applied AI tooling.",
+    aboutHeadline: "SYSTEMS &",
+    aboutEmphasis: "INTELLIGENCE",
+    aboutBio: "Undergraduate Software Engineering student at Injibara University operating at the intersection of backend systems architecture, modern full-stack engineering, and applied AI tooling.",
+    aboutStory: [
+      "I develop software with a terminal-first mindset on Arch Linux / Omarchy OS with the Hyprland tiling window manager. My core focus is architecting resilient backends, tuning relational and key-value databases, and integrating deterministic AI workflows.",
+      "My recent builds include promptHelper (AI prompt optimization platform), 'በህግ አምላክ' (Amharic legal assistant with FastAPI and ChromaDB RAG), PROPERTYMANAGER (RBAC-driven property platform), and omarchy-daily-focus (native desktop Linux utility).",
+      "I am currently executing a rigorous 90-day backend engineering mastery curriculum covering advanced Linux systems, network protocols, Docker, PostgreSQL tuning, Redis caching, Kafka, and Kubernetes."
+    ],
+    aboutStats: [
+      { value: "Injibara Univ.", label: "Software Engineering" },
+      { value: "90-Day", label: "Backend Mastery Track" },
+      { value: "Arch + Hyprland", label: "Terminal-First Environment" },
+      { value: "Backend + AI", label: "Core Specialization" },
+    ],
+    aboutPillars: [
+      {
+        number: "01",
+        title: "Backend & Systems",
+        desc: "Node.js, Express.js, NestJS, and Java for algorithmic problem-solving, clean MVC patterns, and high-throughput API architectures.",
+      },
+      {
+        number: "02",
+        title: "Data Layers & Caching",
+        desc: "PostgreSQL, MySQL, MongoDB, Redis for caching and rate limiting, and Prisma ORM for type-safe data modeling.",
+      },
+      {
+        number: "03",
+        title: "Applied AI & RAG",
+        desc: "Gemini API integrations, ChromaDB vector databases, and localized RAG pipelines for domain-specific intelligence.",
+      },
+      {
+        number: "04",
+        title: "Linux & DevOps Rig",
+        desc: "Docker containerization, GitHub Actions CI/CD, Ubuntu server virtualization, and deep hands-on Linux administration.",
+      },
+    ],
+    email: "yaredbaby21@gmail.com",
   },
   services: [
-    "Creative Direction",
-    "Product Design",
-    "AI Prototyping",
-    "Full-Stack Engineering",
-    "Visual Identity",
-    "Design Systems",
+    "Backend Systems Architecture",
+    "Full-Stack Web Development",
+    "Applied AI & RAG Tooling",
+    "Database Modeling & Caching",
+    "Linux & Docker DevOps",
+    "API & Microservice Design",
   ],
   techCategories: [
     {
@@ -109,23 +156,24 @@ export const portfolioData: PortfolioData = {
         { name: "Node.js", icon: "nodejs", category: "Backend" },
         { name: "Express.js", icon: "expressjs", category: "Backend" },
         { name: "NestJS", icon: "nestjs", category: "Backend" },
-        { name: "Supabase", icon: "supabase", category: "Backend" },
+        { name: "Java", icon: "java", category: "Backend" },
         { name: "PostgreSQL", icon: "postgresql", category: "Backend" },
+        { name: "MySQL", icon: "mysql", category: "Backend" },
         { name: "MongoDB", icon: "mongodb", category: "Backend" },
         { name: "Redis", icon: "redis", category: "Backend" },
-        { name: "GraphQL", icon: "graphql", category: "Backend" },
         { name: "Prisma", icon: "prisma", category: "Backend" },
       ],
     },
     {
       id: "devops",
-      name: "DevOps / Deployment",
+      name: "DevOps / Infrastructure",
       description: "Containerization, orchestration & automated CI/CD",
       items: [
-        { name: "Docker", icon: "docker", category: "DevOps / Deployment" },
-        { name: "Kubernetes", icon: "kubernetes", category: "DevOps / Deployment" },
-        { name: "Vercel", icon: "vercel", category: "DevOps / Deployment" },
-        { name: "GitHub Actions", icon: "githubactions", category: "DevOps / Deployment" },
+        { name: "Docker", icon: "docker", category: "DevOps / Infrastructure" },
+        { name: "Linux / Arch", icon: "linux", category: "DevOps / Infrastructure" },
+        { name: "VirtualBox", icon: "virtualbox", category: "DevOps / Infrastructure" },
+        { name: "GitHub Actions", icon: "githubactions", category: "DevOps / Infrastructure" },
+        { name: "Vercel", icon: "vercel", category: "DevOps / Infrastructure" },
       ],
     },
     {
@@ -139,14 +187,15 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: "tools",
-      name: "Tools / Utilities",
+      name: "Tools / Environment",
       description: "Modern developer environment & team toolchains",
       items: [
-        { name: "VS Code", icon: "vscode", category: "Tools / Utilities" },
-        { name: "Postman", icon: "postman", category: "Tools / Utilities" },
-        { name: "Figma", icon: "figma", category: "Tools / Utilities" },
-        { name: "Chrome DevTools", icon: "chromedevtools", category: "Tools / Utilities" },
-        { name: "Slack", icon: "slack", category: "Tools / Utilities" },
+        { name: "Arch Linux + Hyprland", icon: "arch", category: "Tools / Environment" },
+        { name: "VS Code", icon: "vscode", category: "Tools / Environment" },
+        { name: "Antigravity IDE", icon: "ide", category: "Tools / Environment" },
+        { name: "Postman", icon: "postman", category: "Tools / Environment" },
+        { name: "Figma", icon: "figma", category: "Tools / Environment" },
+        { name: "Slack", icon: "slack", category: "Tools / Environment" },
       ],
     },
   ],
@@ -272,19 +321,17 @@ export const portfolioData: PortfolioData = {
     { name: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/yared-aregayehu" },
     { name: "upwork", label: "Upwork", href: "https://www.upwork.com/" },
     { name: "telegram", label: "Telegram", href: "https://t.me/" },
-    { name: "mail", label: "Email", href: "mailto:hello@yared.design" },
+    { name: "mail", label: "Email", href: "mailto:yaredbaby21@gmail.com" },
   ],
-  defaultAiMessage: "I turn ambitious ideas into expressive digital products — from first prototype to polished production launch.",
+  defaultAiMessage: "I build robust backend systems, applied AI tooling, and modern full-stack web applications.",
   aiResponses: {
-    "what do you do?": "I operate at the intersection of product design, creative engineering, and AI systems. I craft resilient frontends, memorable visual languages, and human-first AI interactions.",
-    "are you available?": "Yes! Currently accepting select contract commissions, technical advisory roles, and high-impact design engineering projects for 2025/2026.",
-    "why ai?": "Because computing is moving from static commands to fluid semantic intelligence. Building interfaces that feel alive requires reimagining how humans and models collaborate.",
-    "what is your tech stack?": "My stack covers Frontend (JavaScript, TypeScript, React, Next.js, Tailwind CSS), Backend (Node.js, Express.js, NestJS, Supabase, PostgreSQL, MongoDB, Redis, GraphQL, Prisma), DevOps (Docker, Kubernetes, Vercel, GitHub Actions), and industry-standard toolchains (Git, GitHub, VS Code, Postman, Figma, Chrome DevTools, Slack).",
-    "tell me about videotrust ai": "VideoTrust AI is an AI-powered YouTube integrity system and Manifest V3 extension. It ingests video transcripts and comments in under 2 seconds, runs Gemini text embeddings to calculate title-transcript semantic divergence, detects bot farms, and produces an explainable Trust Score with WATCH, MAYBE, or SKIP verdicts.",
-    "tell me about backend engineer hub": "Backend Engineer Hub is an open-access learning platform and master roadmap for distributed systems engineers. It spans 7 architectural phases, 31 deep-dives, 93 multi-language blueprints (Go, TypeScript, Python), 7 industry capstones, and an interactive oral interview defense simulator.",
-    "tell me about church erp": "Church Management ERP is a full enterprise parish administration platform developed for Birhane Genet Beata Lemaryam. It features centralized member & family registries, sacramental records (Baptism, Marriage, Burial), real-time financial accounting & budget analytics, and tenant leasing with automated payment alerts.",
-    "tell me about prompt helper": "PromptHelper (AI-Native Prompt Architect) is a developer platform that transforms plain-language inputs into optimized, model-specific prompts tailored for Claude, ChatGPT, Gemini, and DeepSeek. It features 10 model compilers, 4 prompting strategies (including token compression up to 50%), real-time token analytics, and 1-click domain presets.",
-    "tell me about channel vigil bot": "Channel Vigil Bot (@my_channel_vigil_bot) is an automated Telegram channel telemetry and security bot. It monitors subscriber join and leave events in real time, provides bot account detection, logs user IDs and timestamps, and creates transparent audit trails for channel administrators.",
-    "what are your latest projects?": "My featured work includes VideoTrust AI (real-time YouTube clickbait and bot detection), Backend Engineer Hub (open-access distributed systems roadmap), Church Management ERP (enterprise parish & financial platform), AI-Native Prompt Architect (model-specific prompt engineering engine), and Channel Vigil Bot (Telegram channel security and telemetry).",
+    "who is yared?": "Yared is a Software Engineer and undergraduate software engineering student at Injibara University, Ethiopia. He works at the intersection of backend systems architecture, modern full-stack engineering, and applied AI tooling on a customized Arch Linux / Hyprland rig.",
+    "what do you do?": "I architect scalable backend services with Node.js, Express, NestJS, and Java; design data layers with PostgreSQL, Redis, and Prisma; build frontends with React and Next.js; and develop applied AI tools with Gemini, ChromaDB, and RAG pipelines.",
+    "tell me about yourself": "I'm a software engineering student at Injibara University. I build terminal-first on Arch Linux, execute a 90-day backend engineering mastery curriculum, and create practical tools like promptHelper, 'በህግ አምላክ' (Amharic legal RAG), and PROPERTYMANAGER.",
+    "are you available?": "Yes! Open for software engineering internships, contract roles, and collaborative projects in backend architecture, full-stack development, and applied AI.",
+    "what is your tech stack?": "Backend (Node.js, Express.js, NestJS, Java, PostgreSQL, MySQL, MongoDB, Redis, Prisma), Frontend (React, Next.js, TypeScript, Tailwind CSS), DevOps (Docker, Linux/Arch, VirtualBox, GitHub Actions), and AI (Gemini API, ChromaDB RAG).",
+    "tell me about your environment": "I work on an HP EliteBook 840 G8 running Arch Linux / Omarchy OS with the Hyprland tiling window manager, using VS Code, Antigravity IDE, Docker, and terminal automation.",
+    "tell me about prompthelper": "promptHelper is an AI-native prompt engineering and optimization platform built with Next.js, TypeScript, Tailwind CSS, and the Gemini API, deployed on Vercel (prompt-helper-sable.vercel.app).",
+    "tell me about your projects": "Key builds include promptHelper (AI prompt compiler), 'በህግ አምላክ' (Amharic legal assistant with FastAPI and ChromaDB RAG), PROPERTYMANAGER (RBAC property platform), omarchy-daily-focus (Hyprland desktop utility), and VideoTrust AI (YouTube integrity analyzer).",
   },
 }

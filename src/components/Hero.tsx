@@ -61,10 +61,7 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
 
           {targetRoles && (
-            <div className="hero-target-roles">
-              <span className="hero-target-dot" aria-hidden="true" />
-              <span>{targetRoles}</span>
-            </div>
+            <span className="hero-target-roles">{targetRoles}</span>
           )}
         </div>
 

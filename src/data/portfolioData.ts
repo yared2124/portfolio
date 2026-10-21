@@ -91,15 +91,11 @@ export const portfolioData: PortfolioData = {
     heroHeadline: "FUTURES",
     heroSubheadline: "with intelligence",
     heroBio: "Software engineer with 2+ years of experience building robust backend systems, modern full-stack applications, and applied AI tooling.",
-    targetRoles: "Looking for fullstack, backend or AI roles.",
+    targetRoles: "Looking for fullstack, backend or AI roles",
     aboutHeadline: "SYSTEMS &",
     aboutEmphasis: "INTELLIGENCE",
     aboutBio: "Software engineer with 2+ years of hands-on experience operating at the intersection of backend systems architecture, modern full-stack engineering, and applied AI tooling.",
-    education: {
-      degree: "Undergraduate Software Engineering Student",
-      institution: "Injibara University",
-      status: "In Progress",
-    },
+    education: "Software Engineering Student at Injibara University",
     aboutStory: [
       "With 2+ years of engineering experience, I develop software with a terminal-first mindset on Arch Linux / Omarchy OS with the Hyprland tiling window manager. My core focus is architecting resilient backends, tuning relational and key-value databases, and integrating deterministic AI workflows.",
       "My recent builds include promptHelper (AI prompt optimization platform), 'በህግ አምላክ' (Amharic legal assistant with FastAPI and ChromaDB RAG), PROPERTYMANAGER (RBAC-driven property platform), and omarchy-daily-focus (native desktop Linux utility).",

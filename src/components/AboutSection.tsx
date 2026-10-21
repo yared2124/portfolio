@@ -9,11 +9,7 @@ interface AboutSectionProps {
   story?: string[]
   stats?: AboutStat[]
   pillars?: AboutPillar[]
-  education?: {
-    degree: string
-    institution: string
-    status?: string
-  }
+  education?: string
 }
 
 export const AboutSection: React.FC<AboutSectionProps> = ({
@@ -52,19 +48,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
 
           {education && (
             <div className="about-education-card">
-              <div className="about-edu-header">
-                <span className="about-edu-tag">ACADEMIC BACKGROUND</span>
-                {education.status && (
-                  <span className="about-edu-status">{education.status}</span>
-                )}
-              </div>
-              <div className="about-edu-body">
-                <span className="about-edu-degree">{education.degree}</span>
-                <span className="about-edu-institution">
-                  <span className="edu-icon" aria-hidden="true">🏛</span>
-                  {education.institution}
-                </span>
-              </div>
+              <span className="edu-icon" aria-hidden="true">🏛</span>
+              <span className="about-edu-text">{education}</span>
             </div>
           )}
 

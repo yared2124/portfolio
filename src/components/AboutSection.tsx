@@ -9,6 +9,11 @@ interface AboutSectionProps {
   story?: string[]
   stats?: AboutStat[]
   pillars?: AboutPillar[]
+  education?: {
+    degree: string
+    institution: string
+    status?: string
+  }
 }
 
 export const AboutSection: React.FC<AboutSectionProps> = ({
@@ -19,6 +24,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
   story,
   stats,
   pillars,
+  education,
 }) => {
   return (
     <section className="about-section shell" id="about">
@@ -43,6 +49,24 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             <span className="terminal-prompt">$</span>
             <code>arch-linux // omarchy // hyprland // terminal-first</code>
           </div>
+
+          {education && (
+            <div className="about-education-card">
+              <div className="about-edu-header">
+                <span className="about-edu-tag">ACADEMIC BACKGROUND</span>
+                {education.status && (
+                  <span className="about-edu-status">{education.status}</span>
+                )}
+              </div>
+              <div className="about-edu-body">
+                <span className="about-edu-degree">{education.degree}</span>
+                <span className="about-edu-institution">
+                  <span className="edu-icon" aria-hidden="true">🏛</span>
+                  {education.institution}
+                </span>
+              </div>
+            </div>
+          )}
 
           {stats && stats.length > 0 && (
             <div className="about-stats-grid" aria-label="Key engineering highlights">

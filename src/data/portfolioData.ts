@@ -60,6 +60,7 @@ export interface PortfolioData {
     aboutStory?: string[]
     aboutStats?: AboutStat[]
     aboutPillars?: AboutPillar[]
+    education?: string
     email: string
     avatar?: string
   }
@@ -94,6 +95,11 @@ export const portfolioData: PortfolioData = {
     aboutHeadline: "SYSTEMS &",
     aboutEmphasis: "INTELLIGENCE",
     aboutBio: "Software engineer with 2+ years of hands-on experience operating at the intersection of backend systems architecture, modern full-stack engineering, and applied AI tooling.",
+    education: {
+      degree: "Undergraduate Software Engineering Student",
+      institution: "Injibara University",
+      status: "In Progress",
+    },
     aboutStory: [
       "With 2+ years of engineering experience, I develop software with a terminal-first mindset on Arch Linux / Omarchy OS with the Hyprland tiling window manager. My core focus is architecting resilient backends, tuning relational and key-value databases, and integrating deterministic AI workflows.",
       "My recent builds include promptHelper (AI prompt optimization platform), 'በህግ አምላክ' (Amharic legal assistant with FastAPI and ChromaDB RAG), PROPERTYMANAGER (RBAC-driven property platform), and omarchy-daily-focus (native desktop Linux utility).",
@@ -132,7 +138,7 @@ export const portfolioData: PortfolioData = {
   services: [
     "Backend Systems Architecture",
     "Full-Stack Web Development",
-    "Mobile App Development (Flutter & React Native)",
+    "Mobile App Development",
     "Applied AI & RAG Tooling",
     "Database Modeling & Caching",
     "Linux & Docker DevOps",
@@ -341,9 +347,11 @@ export const portfolioData: PortfolioData = {
   ],
   defaultAiMessage: "I build robust backend systems, applied AI tooling, and modern full-stack web applications.",
   aiResponses: {
-    "who is yared?": "Yared Aregayehu is a Software Engineer with 2+ years of experience operating at the intersection of backend systems architecture, modern full-stack engineering, and applied AI tooling on a customized Arch Linux / Hyprland rig.",
+    "who is yared?": "Yared Aregayehu is a Software Engineer with 2+ years of experience operating at the intersection of backend systems architecture, modern full-stack engineering, and applied AI tooling on a customized Arch Linux / Hyprland rig. He is an undergraduate software engineering student at Injibara University.",
     "what do you do?": "I architect scalable backend services with Node.js, Express, NestJS, and Java; design data layers with PostgreSQL, Redis, and Prisma; build frontends with React and Next.js; and develop applied AI tools with Gemini, ChromaDB, and RAG pipelines.",
-    "tell me about yourself": "I'm a software engineer building terminal-first on Arch Linux, executing a 90-day backend engineering mastery curriculum, and creating practical tools like promptHelper, 'በህግ አምላክ' (Amharic legal RAG), and PROPERTYMANAGER.",
+    "tell me about yourself": "I'm a software engineer with 2+ years of experience building terminal-first on Arch Linux, studying software engineering at Injibara University, executing a 90-day backend engineering mastery curriculum, and creating practical tools like promptHelper, 'በህግ አምላክ' (Amharic legal RAG), and PROPERTYMANAGER.",
+    "what is your education?": "I am currently an undergraduate Software Engineering student at Injibara University, pairing deep academic engineering fundamentals with 2+ years of hands-on production system development.",
+    "education": "Undergraduate Software Engineering student at Injibara University.",
     "are you available?": "Yes! Looking for fullstack, backend or AI roles (open for internships, full-time engineering, contract roles, and collaborative builds).",
     "what is your tech stack?": "Backend (Node.js, Express.js, NestJS, Java, PostgreSQL, MySQL, MongoDB, Redis, Prisma), Mobile (Flutter, React Native), Frontend (React, Next.js, TypeScript, Tailwind CSS), DevOps (Docker, Linux/Arch, VirtualBox, GitHub Actions), and AI (Gemini API, ChromaDB RAG).",
     "tell me about your environment": "I work on an HP EliteBook 840 G8 running Arch Linux / Omarchy OS with the Hyprland tiling window manager, using VS Code, Antigravity IDE, Docker, and terminal automation.",

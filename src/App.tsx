@@ -80,6 +80,7 @@ export function App() {
           story={profile.aboutStory}
           stats={profile.aboutStats}
           pillars={profile.aboutPillars}
+          education={profile.education}
         />
 
         {/* 03 / Contact & Socials */}

@@ -30,13 +30,13 @@ export const AiAssistant: React.FC<AiAssistantProps> = ({
 
       if (!reply) {
         if (trimmed.includes('contact') || trimmed.includes('email') || trimmed.includes('hire') || trimmed.includes('reach')) {
-          reply = `You can reach me directly at hello@yared.design or via Telegram/LinkedIn down below.`
+          reply = `You can reach me directly at yaredbaby21@gmail.com or via Telegram/LinkedIn down below.`
         } else if (trimmed.includes('stack') || trimmed.includes('tech') || trimmed.includes('tool') || trimmed.includes('language')) {
           reply = `My core toolkit comprises TypeScript, React, Next.js, Docker, Python, Node.js, and generative AI APIs.`
         } else if (trimmed.includes('project') || trimmed.includes('work') || trimmed.includes('case')) {
-          reply = `Check out Neura (adaptive learning AI), FORM / 01 (generative live identity), and Synapse (collaborative agent workspace) in the Work section!`
+          reply = `Check out VideoTrust AI, Backend Engineer Hub, Church Management ERP, and Prompt Architect in the Work section!`
         } else if (trimmed.includes('who') || trimmed.includes('about')) {
-          reply = `I'm ${name} — a creative technologist focused on turning emerging AI and systems into tactile, unforgettable digital experiences.`
+          reply = `I'm ${name} — a software engineer building backend systems, applied AI tools, and full-stack applications.`
         } else {
           // Dynamic conversational response
           const pool = Object.values(responses)

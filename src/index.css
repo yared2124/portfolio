@@ -1748,6 +1748,92 @@ button {
   color: var(--acid);
 }
 
+/* Academic Dossier Card */
+.about-education-card {
+  padding: 14px 18px;
+  border-left: 3px solid var(--violet);
+  border-top: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 2px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme="dark"] .about-education-card {
+  border-left-color: var(--acid);
+}
+
+.about-education-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.about-edu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.about-edu-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--violet);
+}
+
+[data-theme="dark"] .about-edu-tag {
+  color: var(--acid);
+}
+
+.about-edu-status {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  padding: 2px 7px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.85;
+}
+
+.about-edu-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.about-edu-degree {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.about-edu-institution {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+  color: var(--ink);
+}
+
+.edu-icon {
+  font-size: 13px;
+}
+
 /* User-loved 4 Stat Cards */
 .about-stats-grid {
   display: grid;

@@ -338,7 +338,7 @@ export const portfolioData: PortfolioData = {
     { name: "github", label: "GitHub", href: "https://github.com/yared2124" },
     { name: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/yared-aregayehu" },
     { name: "upwork", label: "Upwork", href: "https://www.upwork.com/freelancers/~01d753e6390a3edfe6" },
-    { name: "telegram", label: "Telegram", href: "https://t.me/" },
+    { name: "telegram", label: "Telegram", href: "https://t.me/Arstatalis" },
     { name: "mail", label: "Email", href: "mailto:yaredbaby21@gmail.com" },
   ],
   defaultAiMessage: "I build robust backend systems, applied AI tooling, and modern full-stack web applications.",

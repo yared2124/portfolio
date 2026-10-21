@@ -17,36 +17,53 @@ export const AiAssistant: React.FC<AiAssistantProps> = ({
   const [message, setMessage] = useState(defaultMessage)
   const [isThinking, setIsThinking] = useState(false)
 
-  const handleAsk = (query: string) => {
-    const trimmed = query.trim().toLowerCase()
+  const handleAsk = async (query: string) => {
+    const trimmed = query.trim()
     if (!trimmed) return
 
     setIsThinking(true)
     setInput('')
 
-    window.setTimeout(() => {
-      // Direct or keyword-based match
-      let reply = responses[trimmed]
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: trimmed }),
+      })
 
-      if (!reply) {
-        if (trimmed.includes('contact') || trimmed.includes('email') || trimmed.includes('hire') || trimmed.includes('reach')) {
-          reply = `You can reach me directly at yaredbaby21@gmail.com or via Telegram/LinkedIn down below.`
-        } else if (trimmed.includes('stack') || trimmed.includes('tech') || trimmed.includes('tool') || trimmed.includes('language')) {
-          reply = `My core toolkit comprises TypeScript, React, Next.js, Docker, Python, Node.js, and generative AI APIs.`
-        } else if (trimmed.includes('project') || trimmed.includes('work') || trimmed.includes('case')) {
-          reply = `Check out VideoTrust AI, Backend Engineer Hub, Church Management ERP, and Prompt Architect in the Work section!`
-        } else if (trimmed.includes('who') || trimmed.includes('about')) {
-          reply = `I'm ${name} — a software engineer building backend systems, applied AI tools, and full-stack applications.`
-        } else {
-          // Dynamic conversational response
-          const pool = Object.values(responses)
-          reply = pool[trimmed.length % pool.length]
+      if (res.ok) {
+        const data = await res.json()
+        if (data?.reply) {
+          setMessage(data.reply)
+          setIsThinking(false)
+          return
         }
       }
+    } catch {
+      // Offline or local development fallback
+    }
 
-      setMessage(reply)
-      setIsThinking(false)
-    }, 600)
+    // Direct or keyword-based match fallback
+    const lower = trimmed.toLowerCase()
+    let reply = responses[lower]
+
+    if (!reply) {
+      if (lower.includes('contact') || lower.includes('email') || lower.includes('hire') || lower.includes('reach') || lower.includes('telegram')) {
+        reply = `You can reach me directly at yaredbaby21@gmail.com or via Telegram @Arstatalis down below.`
+      } else if (lower.includes('stack') || lower.includes('tech') || lower.includes('tool') || lower.includes('language')) {
+        reply = `My core toolkit comprises Node.js, Express, NestJS, Java, PostgreSQL, Redis, React, Next.js, Docker, and Gemini AI.`
+      } else if (lower.includes('project') || lower.includes('work') || lower.includes('case')) {
+        reply = `Check out VideoTrust AI, Backend Engineer Hub, Church Management ERP, promptHelper, and Channel Vigil Bot in the Work section!`
+      } else if (lower.includes('who') || lower.includes('about')) {
+        reply = `I'm ${name} — a software engineer building backend systems, applied AI tools, and full-stack applications.`
+      } else {
+        const pool = Object.values(responses)
+        reply = pool[trimmed.length % pool.length]
+      }
+    }
+
+    setMessage(reply)
+    setIsThinking(false)
   }
 
   const handleSubmit = (e: React.FormEvent) => {

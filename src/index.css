@@ -2567,6 +2567,10 @@ button {
   right: 24px;
   z-index: 45;
   width: min(400px, calc(100vw - 48px));
+  max-height: calc(100vh - 120px);
+  max-height: calc(100dvh - 120px);
+  display: flex;
+  flex-direction: column;
   background-color: var(--paper);
   border: 1px solid var(--ink);
   box-shadow: 8px 8px 0 var(--ink);
@@ -2594,6 +2598,7 @@ button {
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.06em;
+  flex-shrink: 0;
 }
 
 .assistant-head>div {
@@ -2613,18 +2618,47 @@ button {
 .assistant-message {
   background-color: var(--violet);
   color: #ffffff;
-  padding: 18px;
-  margin: 16px 0 14px;
-  min-height: 110px;
+  padding: 16px 16px;
+  margin: 14px 0 12px;
+  min-height: 80px;
+  max-height: 210px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   display: flex;
-  gap: 12px;
+  gap: 10px;
   border-radius: 2px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.5) rgba(0, 0, 0, 0.15);
+}
+
+.assistant-message::-webkit-scrollbar {
+  width: 6px;
+}
+
+.assistant-message::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+
+.assistant-message::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+}
+
+.assistant-message::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.assistant-spark-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .assistant-message p {
-  font-size: 14px;
+  font-size: 13.5px;
   line-height: 1.55;
   margin: 0;
+  word-break: break-word;
 }
 
 .suggestions {
@@ -2632,6 +2666,7 @@ button {
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 14px;
+  flex-shrink: 0;
 }
 
 .suggestions button {
@@ -3094,8 +3129,16 @@ button {
     width: calc(100vw - 32px);
     right: 16px;
     bottom: 76px;
-    padding: 16px;
+    padding: 14px;
+    max-height: calc(100vh - 90px);
+    max-height: calc(100dvh - 90px);
     box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  .assistant-message {
+    max-height: 180px;
+    padding: 12px 14px;
+    margin: 10px 0 10px;
   }
 
   .ai-trigger {

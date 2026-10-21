@@ -98,9 +98,9 @@ export const AiAssistant: React.FC<AiAssistantProps> = ({
           <span>PORTFOLIO INTELLIGENCE</span>
         </div>
 
-        <div className="assistant-message">
-          <Icon name="spark" size={16} />
-          <p>{isThinking ? 'Thinking in strange loops...' : message}</p>
+        <div className="assistant-message" tabIndex={0} role="region" aria-label="AI response">
+          <Icon name="spark" size={16} className="assistant-spark-icon" />
+          <p>{isThinking ? 'Thinking in strange loops...' : message.replace(/\*/g, '').replace(/ {2,}/g, ' ')}</p>
         </div>
 
         <div className="suggestions">

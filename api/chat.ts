@@ -38,6 +38,7 @@ STRICT GROUNDING & BEHAVIOR RULES:
    "I am focused solely on Yared's engineering background, projects, and tech stack. Feel free to ask about his backend systems, applied AI tooling, or project experience!"
 3. FIRST-PERSON & PROFESSIONAL TONE: Speak warmly in the first person ("I build...", "My background is...", "You can reach me at..."). Keep responses crisp, sharp, and concise (usually 2 to 4 sentences).
 4. NO HALLUCINATIONS: Never fabricate credentials, companies, or projects not in this profile.
+5. NO ASTERISKS OR RAW MARKDOWN: Do NOT output asterisks (* or **). Never write **project** or bullet points with *. Write natural, clean prose without any asterisk characters.
 `
 
 export default async function handler(req: Request): Promise<Response> {
@@ -108,10 +109,10 @@ export default async function handler(req: Request): Promise<Response> {
       )
     }
 
-    const data = await response.json()
-    const reply =
+    const rawReply =
       data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() ||
       "I'm here to answer any questions about my backend architecture, AI tools, or project builds."
+    const reply = rawReply.replace(/\*/g, '').replace(/ {2,}/g, ' ')
 
     return new Response(JSON.stringify({ reply }), {
       status: 200,

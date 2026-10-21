@@ -2539,33 +2539,28 @@ button {
   }
 
   .nav {
-    height: 64px;
-    gap: 14px;
+    height: 60px;
+    gap: 12px;
   }
 
   .brand-name {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 800;
   }
 
   .nav-links {
     display: flex;
-    gap: 14px;
+    gap: 12px;
     font-size: 11px;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
   }
 
   .nav-actions {
     gap: 10px;
   }
 
-  .theme-toggle {
-    width: 38px;
-    height: 38px;
-  }
-
   .hero {
-    min-height: 100svh;
+    min-height: auto;
     padding: 80px 0 32px;
   }
 
@@ -2573,8 +2568,8 @@ button {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 32px;
-    padding: 24px 0;
+    gap: 28px;
+    padding: 20px 0;
   }
 
   .hero-avatar-frame {
@@ -2582,15 +2577,15 @@ button {
   }
 
   .hero-avatar-circle {
-    width: clamp(220px, 58vw, 320px);
-    height: clamp(220px, 58vw, 320px);
+    width: clamp(200px, 54vw, 300px);
+    height: clamp(200px, 54vw, 300px);
     aspect-ratio: 1 / 1;
   }
 
   .project,
   .project--rev {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
     padding: 32px 0;
   }
 
@@ -2609,8 +2604,8 @@ button {
 
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
-    padding: 60px 0 80px;
+    gap: 40px;
+    padding: 50px 0 70px;
   }
 
   .services {
@@ -2625,14 +2620,6 @@ button {
     grid-column: 1 / -1;
   }
 
-  .site-footer .footer-inner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 0;
-    gap: 12px;
-  }
-
   .about-pillars-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
@@ -2643,27 +2630,83 @@ button {
   }
 }
 
-@media (max-width: 600px) {
-  .nav {
-    height: 60px;
+@media (max-width: 768px) {
+  .hero-foot {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 16px;
+    padding-top: 16px;
+  }
+
+  .hero-foot-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .circle-link {
+    align-self: flex-end;
+    width: 46px;
+    height: 46px;
+  }
+
+  .stack-filter-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+    gap: 6px;
+  }
+
+  .stack-filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .stack-filter-pill {
+    flex-shrink: 0;
+  }
+
+  .tech-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
 
+  .tech-card {
+    padding: 8px 10px;
+    min-height: 44px;
+  }
+
+  .tech-card-name {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .shell {
+    width: min(100% - 24px, 1380px);
+  }
+
+  .nav {
+    height: 54px;
+    gap: 6px;
+  }
+
   .brand-name {
-    font-size: 16px;
+    font-size: 14.5px;
   }
 
   .nav-links {
-    gap: 10px;
+    gap: 8px;
+    font-size: 9.5px;
+  }
+
+  .visitor-pill {
+    padding: 4px 8px;
     font-size: 10px;
-  }
-
-  .about-pillars-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-stats-grid {
-    grid-template-columns: 1fr;
+    gap: 4px;
+    border-radius: 2px;
   }
 
   .visitor-label {
@@ -2671,8 +2714,205 @@ button {
   }
 
   .visitor-popover {
-    right: -20px;
-    width: min(calc(100vw - 32px), 260px);
+    right: -12px;
+    width: min(calc(100vw - 24px), 260px);
+  }
+
+  .theme-toggle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hero {
+    padding: 68px 0 24px;
+  }
+
+  .hero-name {
+    font-size: clamp(38px, 14vw, 56px);
+  }
+
+  .hero-bio {
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+
+  .hero-avatar-circle {
+    width: min(230px, 66vw);
+    height: min(230px, 66vw);
+  }
+
+  .about-title-line {
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .about-terminal-tag {
+    font-size: 10px;
+    padding: 6px 10px;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
+  .about-terminal-tag code {
+    word-break: break-all;
+  }
+
+  .about-education-card {
+    padding: 9px 12px;
+    gap: 8px;
+  }
+
+  .about-edu-text {
+    font-size: 11px;
+    word-break: break-word;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .about-stat-card {
+    padding: 12px 14px;
+  }
+
+  .about-stat-value {
+    font-size: 16px;
+  }
+
+  .about-stat-label {
+    font-size: 9px;
+  }
+
+  .about-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .about-lead-card {
+    padding: 14px 16px;
+  }
+
+  .about-lead {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .about-story-block {
+    padding: 14px 14px;
+  }
+
+  .about-story-block .about-paragraph,
+  .about-trajectory-card .about-paragraph {
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  .about-trajectory-card {
+    padding: 14px 14px;
+  }
+
+  .about-services-pills {
+    gap: 6px;
+  }
+
+  .service-pill {
+    padding: 4px 9px;
+    font-size: 9.5px;
+  }
+
+  .project {
+    padding: 24px 0;
+    gap: 16px;
+  }
+
+  .project-visual {
+    min-height: 190px;
+    max-height: 250px;
+  }
+
+  .project-actions {
+    margin-top: 16px;
+    gap: 10px;
+  }
+
+  .project-link-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .contact-body h2 {
+    font-size: clamp(26px, 8vw, 36px);
+    line-height: 1.1;
+  }
+
+  .contact-subtext {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  .contact-meta-row {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .social-links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .social-links>a {
+    min-height: 80px;
+    padding: 12px 12px;
+  }
+
+  .site-footer .footer-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    font-size: 11px;
+    padding: 14px 0;
+  }
+
+  .assistant {
+    width: calc(100vw - 32px);
+    right: 16px;
+    bottom: 76px;
+    padding: 16px;
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  .ai-trigger {
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .shell {
+    width: min(100% - 20px, 1380px);
+  }
+
+  .brand-name {
+    font-size: 13.5px;
+  }
+
+  .nav-links {
+    gap: 6px;
+    font-size: 9px;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-links {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-cards-grid {
+    grid-template-columns: 1fr;
   }
 }
 

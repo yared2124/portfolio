@@ -1903,6 +1903,13 @@ button {
   text-transform: uppercase;
   color: var(--violet);
   font-weight: 700;
+  transition: transform 0.2s ease;
+  display: inline-block;
+  width: fit-content;
+}
+
+.about-services-title:hover {
+  transform: scale(1.03);
 }
 
 [data-theme="dark"] .about-services-title {
@@ -1916,6 +1923,7 @@ button {
 }
 
 .service-pill {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -1926,27 +1934,30 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   background: rgba(255, 255, 255, 0.02);
-  transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+  color: var(--ink);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  transform-origin: center;
+  cursor: pointer;
+  z-index: 1;
 }
 
 .service-pill:hover {
-  background-color: var(--acid);
-  color: #0b0b0c;
-  border-color: #0b0b0c;
-  transform: translateY(-1px);
+  transform: scale(1.08);
+  border-color: var(--ink);
+  background-color: rgba(125, 125, 125, 0.08);
+  color: var(--ink);
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .service-arrow {
   color: var(--violet);
   font-size: 11px;
-}
-
-[data-theme="dark"] .service-arrow {
-  color: var(--acid);
+  transition: transform 0.2s ease;
 }
 
 .service-pill:hover .service-arrow {
-  color: #0b0b0c;
+  transform: translateX(3px);
 }
 
 /* Architectural Pillars */

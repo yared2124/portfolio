@@ -166,6 +166,7 @@ export const portfolioData: PortfolioData = {
       description: "Scalable APIs, resilient services & databases",
       items: [
         { name: "Node.js", icon: "nodejs", category: "Backend" },
+        { name: "Python", icon: "python", category: "Backend" },
         { name: "Express.js", icon: "expressjs", category: "Backend" },
         { name: "NestJS", icon: "nestjs", category: "Backend" },
         { name: "Java", icon: "java", category: "Backend" },
@@ -214,6 +215,7 @@ export const portfolioData: PortfolioData = {
   stack: [
     "JavaScript",
     "TypeScript",
+    "Python",
     "React",
     "Next.js",
     "Flutter",

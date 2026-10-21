@@ -35,6 +35,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               <strong>LOCATION:</strong> Available for Remote work
             </span>
             <span className="contact-meta-item">
+              <strong>ROLES:</strong> Fullstack, Backend &amp; AI
+            </span>
+            <span className="contact-meta-item">
               <strong>RESPONSE:</strong> Usually within 24 hours
             </span>
           </div>

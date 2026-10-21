@@ -9,6 +9,7 @@ interface HeroProps {
   subheadline?: string
   bio: string
   avatar?: string
+  targetRoles?: string
 }
 
 export const Hero: React.FC<HeroProps> = ({
@@ -17,6 +18,7 @@ export const Hero: React.FC<HeroProps> = ({
   location,
   bio,
   avatar = '/profile.jpg',
+  targetRoles,
 }) => {
   return (
     <section className="hero shell" id="top">
@@ -52,10 +54,19 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       <div className="hero-foot">
-        <div className="hero-motto">
-          <span className="motto-line" aria-hidden="true" />
-          <span className="motto-text">Work smarter, not harder</span>
-          <span className="motto-line" aria-hidden="true" />
+        <div className="hero-foot-left">
+          <div className="hero-motto">
+            <span className="motto-line" aria-hidden="true" />
+            <span className="motto-text">Work smarter, not harder</span>
+            <span className="motto-line" aria-hidden="true" />
+          </div>
+
+          {targetRoles && (
+            <div className="hero-target-roles">
+              <span className="hero-target-dot" aria-hidden="true" />
+              <span>{targetRoles}</span>
+            </div>
+          )}
         </div>
 
         <a className="circle-link" href="#work" aria-label="Explore selected projects">

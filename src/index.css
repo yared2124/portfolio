@@ -280,9 +280,9 @@ button {
   font-family: var(--font-mono);
   font-size: 10.5px;
   letter-spacing: 0.04em;
-  padding: 3px 9px;
+  padding: 4px 10px;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 2px;
   background-color: rgba(11, 11, 12, 0.03);
   color: var(--ink);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -295,7 +295,7 @@ button {
 
 .visitor-pill:hover {
   border-color: var(--ink);
-  background-color: rgba(217, 255, 67, 0.15);
+  background-color: rgba(125, 125, 125, 0.1);
   transform: translateY(-1px);
 }
 
@@ -655,6 +655,10 @@ button {
   color: var(--violet);
 }
 
+[data-theme="dark"] .hero-greeting {
+  color: var(--acid);
+}
+
 .hero-name {
   font-family: var(--font-serif);
   font-size: clamp(52px, 8.5vw, 108px);
@@ -681,6 +685,37 @@ button {
   letter-spacing: -0.01em;
 }
 
+.hero-target-roles {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  font-family: var(--font-mono);
+  font-size: clamp(11px, 1.05vw, 12px);
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  background: rgba(125, 125, 125, 0.05);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  width: fit-content;
+  transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.hero-target-roles:hover {
+  border-color: var(--ink);
+  background: rgba(125, 125, 125, 0.09);
+  transform: translateY(-1px);
+}
+
+.hero-target-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--ink);
+  opacity: 0.65;
+  display: inline-block;
+}
+
 .hero-foot {
   display: flex;
   align-items: center;
@@ -688,6 +723,13 @@ button {
   border-top: 1px solid var(--line);
   padding-top: 20px;
   gap: 24px;
+}
+
+.hero-foot-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .hero-motto {
@@ -1095,22 +1137,21 @@ button {
 .project-status-pill {
   display: inline-flex;
   align-items: center;
-  padding: 2px 8px;
   font-family: var(--font-mono);
-  font-size: 9.5px;
-  letter-spacing: 0.05em;
+  font-size: 10px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  border-radius: 999px;
-  background-color: rgba(255, 91, 53, 0.1);
   color: var(--orange);
-  border: 1px solid rgba(255, 91, 53, 0.35);
-  font-weight: 500;
+  font-weight: 600;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 [data-theme="dark"] .project-status-pill {
-  background-color: rgba(255, 103, 67, 0.14);
+  background: none;
+  border: none;
   color: var(--orange);
-  border-color: rgba(255, 103, 67, 0.4);
 }
 
 .project-details h2 {
@@ -1273,9 +1314,8 @@ button {
 .stack-section {
   background-color: var(--paper);
   color: var(--ink);
-  border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  padding: 48px 0 56px;
+  padding: 24px 0 36px;
   overflow: hidden;
   position: relative;
 }
@@ -1283,9 +1323,11 @@ button {
 .stack-intro {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  gap: 28px;
-  margin-bottom: 26px;
+  align-items: baseline;
+  gap: 24px;
+  border-bottom: 1px solid var(--line);
+  padding: 0 0 16px;
+  margin-bottom: 20px;
 }
 
 .stack-header-left {

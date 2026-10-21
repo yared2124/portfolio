@@ -62,6 +62,7 @@ export function App() {
           location={profile.location}
           bio={profile.heroBio}
           avatar={profile.avatar}
+          targetRoles={profile.targetRoles}
         />
 
         {/* 01 / Selected Work */}

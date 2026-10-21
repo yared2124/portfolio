@@ -58,6 +58,8 @@ export const TechIcon: React.FC<TechIconProps> = ({
       )
 
     case 'react':
+    case 'reactnative':
+    case 'react-native':
       return (
         <svg
           width={size}
@@ -85,6 +87,23 @@ export const TechIcon: React.FC<TechIconProps> = ({
               transform="rotate(120 12 12)"
             />
           </g>
+        </svg>
+      )
+
+    case 'flutter':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          className={className}
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M14.314 0L2.3 12l3.7 3.7 12.014-12H14.314z" fill="#42A5F5" />
+          <path d="M14.286 10.971l-5.6 5.6 5.6 5.6h3.714l-5.6-5.6 5.6-5.6h-3.714z" fill="#02569B" />
+          <path d="M8.686 16.571l2.8 2.8h3.714l-2.8-2.8H8.686z" fill="#01579B" />
+          <path d="M11.486 19.371l2.8 2.8h3.714l-2.8-2.8h-3.714z" fill="#29B6F6" />
         </svg>
       )
 

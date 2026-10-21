@@ -8,7 +8,7 @@ interface VisitorCounterProps {
 
 export const VisitorCounter: React.FC<VisitorCounterProps> = ({
   counterKey = 'yared-aregayehu-portfolio-views',
-  label = 'views',
+  label = 'Visits',
 }) => {
   const [count, setCount] = useState<number | null>(null)
   const [displayCount, setDisplayCount] = useState<number>(0)
@@ -16,7 +16,25 @@ export const VisitorCounter: React.FC<VisitorCounterProps> = ({
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [source, setSource] = useState<string>('Connecting...')
   const [lastUpdated, setLastUpdated] = useState<string>('Syncing...')
+  const [realTime, setRealTime] = useState<string>('')
   const popoverRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const updateClock = () => {
+      const now = new Date()
+      setRealTime(
+        now.toLocaleTimeString([], {
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true,
+        })
+      )
+    }
+    updateClock()
+    const timer = setInterval(updateClock, 1000)
+    return () => clearInterval(timer)
+  }, [])
 
   useEffect(() => {
     let isMounted = true
@@ -188,7 +206,7 @@ export const VisitorCounter: React.FC<VisitorCounterProps> = ({
           </div>
 
           <div className="visitor-popover-metric">
-            <span className="metric-label">Total Verified Views</span>
+            <span className="metric-label">Total Verified Visits</span>
             <span className="metric-number">
               {count !== null ? count.toLocaleString() : '...'}
             </span>
@@ -200,10 +218,10 @@ export const VisitorCounter: React.FC<VisitorCounterProps> = ({
               <span className="metric-card-val">#{userVisits}</span>
             </div>
             <div className="metric-card">
-              <span className="metric-card-label">Database Sync</span>
+              <span className="metric-card-label">Real Time</span>
               <span className="metric-card-val live-active">
                 <span className="pulse-tiny" />
-                Live ({lastUpdated})
+                {realTime || 'Loading...'}
               </span>
             </div>
           </div>

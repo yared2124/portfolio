@@ -56,6 +56,7 @@ export interface PortfolioData {
     aboutHeadline: string
     aboutEmphasis: string
     aboutBio: string
+    targetRoles?: string
     aboutStory?: string[]
     aboutStats?: AboutStat[]
     aboutPillars?: AboutPillar[]
@@ -78,7 +79,7 @@ export interface PortfolioData {
 export const portfolioData: PortfolioData = {
   stats: {
     counterKey: "yared-aregayehu-portfolio-views",
-    label: "Views",
+    label: "Visits",
   },
   profile: {
     name: "Yared Aregayehu",
@@ -89,6 +90,7 @@ export const portfolioData: PortfolioData = {
     heroHeadline: "FUTURES",
     heroSubheadline: "with intelligence",
     heroBio: "Software engineer with 2+ years of experience building robust backend systems, modern full-stack applications, and applied AI tooling.",
+    targetRoles: "Looking for fullstack, backend or AI roles.",
     aboutHeadline: "SYSTEMS &",
     aboutEmphasis: "INTELLIGENCE",
     aboutBio: "Software engineer with 2+ years of hands-on experience operating at the intersection of backend systems architecture, modern full-stack engineering, and applied AI tooling.",
@@ -130,6 +132,7 @@ export const portfolioData: PortfolioData = {
   services: [
     "Backend Systems Architecture",
     "Full-Stack Web Development",
+    "Mobile App Development (Flutter & React Native)",
     "Applied AI & RAG Tooling",
     "Database Modeling & Caching",
     "Linux & Docker DevOps",
@@ -146,6 +149,15 @@ export const portfolioData: PortfolioData = {
         { name: "React", icon: "react", category: "Frontend" },
         { name: "Next.js", icon: "nextjs", category: "Frontend" },
         { name: "Tailwind CSS", icon: "tailwindcss", category: "Frontend" },
+      ],
+    },
+    {
+      id: "mobile",
+      name: "Mobile Development",
+      description: "Cross-platform mobile engineering for iOS and Android",
+      items: [
+        { name: "Flutter", icon: "flutter", category: "Mobile Development" },
+        { name: "React Native", icon: "reactnative", category: "Mobile Development" },
       ],
     },
     {
@@ -204,6 +216,8 @@ export const portfolioData: PortfolioData = {
     "TypeScript",
     "React",
     "Next.js",
+    "Flutter",
+    "React Native",
     "Tailwind CSS",
     "Node.js",
     "Express.js",
@@ -328,8 +342,8 @@ export const portfolioData: PortfolioData = {
     "who is yared?": "Yared Aregayehu is a Software Engineer with 2+ years of experience operating at the intersection of backend systems architecture, modern full-stack engineering, and applied AI tooling on a customized Arch Linux / Hyprland rig.",
     "what do you do?": "I architect scalable backend services with Node.js, Express, NestJS, and Java; design data layers with PostgreSQL, Redis, and Prisma; build frontends with React and Next.js; and develop applied AI tools with Gemini, ChromaDB, and RAG pipelines.",
     "tell me about yourself": "I'm a software engineer building terminal-first on Arch Linux, executing a 90-day backend engineering mastery curriculum, and creating practical tools like promptHelper, 'በህግ አምላክ' (Amharic legal RAG), and PROPERTYMANAGER.",
-    "are you available?": "Yes! Open for software engineering internships, contract roles, and collaborative projects in backend architecture, full-stack development, and applied AI.",
-    "what is your tech stack?": "Backend (Node.js, Express.js, NestJS, Java, PostgreSQL, MySQL, MongoDB, Redis, Prisma), Frontend (React, Next.js, TypeScript, Tailwind CSS), DevOps (Docker, Linux/Arch, VirtualBox, GitHub Actions), and AI (Gemini API, ChromaDB RAG).",
+    "are you available?": "Yes! Looking for fullstack, backend or AI roles (open for internships, full-time engineering, contract roles, and collaborative builds).",
+    "what is your tech stack?": "Backend (Node.js, Express.js, NestJS, Java, PostgreSQL, MySQL, MongoDB, Redis, Prisma), Mobile (Flutter, React Native), Frontend (React, Next.js, TypeScript, Tailwind CSS), DevOps (Docker, Linux/Arch, VirtualBox, GitHub Actions), and AI (Gemini API, ChromaDB RAG).",
     "tell me about your environment": "I work on an HP EliteBook 840 G8 running Arch Linux / Omarchy OS with the Hyprland tiling window manager, using VS Code, Antigravity IDE, Docker, and terminal automation.",
     "tell me about prompthelper": "promptHelper is an AI-native prompt engineering and optimization platform built with Next.js, TypeScript, Tailwind CSS, and the Gemini API, deployed on Vercel (prompt-helper-sable.vercel.app).",
     "tell me about your projects": "Key builds include promptHelper (AI prompt compiler), 'በህግ አምላክ' (Amharic legal assistant with FastAPI and ChromaDB RAG), PROPERTYMANAGER (RBAC property platform), omarchy-daily-focus (Hyprland desktop utility), and VideoTrust AI (YouTube integrity analyzer).",

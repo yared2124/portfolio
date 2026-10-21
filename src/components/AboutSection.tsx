@@ -2,8 +2,8 @@ import React from 'react'
 import type { AboutStat, AboutPillar } from '../data/portfolioData'
 
 interface AboutSectionProps {
-  headline: string
-  emphasis: string
+  headline?: string
+  emphasis?: string
   bio: string
   services: string[]
   story?: string[]
@@ -13,8 +13,6 @@ interface AboutSectionProps {
 }
 
 export const AboutSection: React.FC<AboutSectionProps> = ({
-  headline,
-  emphasis,
   bio,
   services,
   story,

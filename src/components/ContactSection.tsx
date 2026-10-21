@@ -3,13 +3,12 @@ import type { SocialLink } from '../data/portfolioData'
 import { Icon } from './Icons'
 
 interface ContactSectionProps {
-  email: string
+  email?: string
   socials: SocialLink[]
   name?: string
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({
-  email,
   socials,
 }) => {
   return (

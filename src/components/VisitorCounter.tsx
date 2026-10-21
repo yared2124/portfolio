@@ -15,7 +15,6 @@ export const VisitorCounter: React.FC<VisitorCounterProps> = ({
   const [userVisits, setUserVisits] = useState<number>(1)
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [source, setSource] = useState<string>('Connecting...')
-  const [lastUpdated, setLastUpdated] = useState<string>('Syncing...')
   const [realTime, setRealTime] = useState<string>('')
   const popoverRef = useRef<HTMLDivElement>(null)
 
@@ -129,7 +128,6 @@ export const VisitorCounter: React.FC<VisitorCounterProps> = ({
       if (isMounted) {
         setCount(realValue)
         setSource(resolvedSource)
-        setLastUpdated(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))
 
         // Smooth roll-up animation to the real value
         const start = Math.max(0, realValue - 20)

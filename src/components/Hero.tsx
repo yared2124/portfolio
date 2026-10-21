@@ -32,7 +32,6 @@ export const Hero: React.FC<HeroProps> = ({
           <span className="hero-greeting">CREATIVE TECHNOLOGIST & ENGINEER</span>
           <h1 className="hero-name">
             {name}
-            <span className="hero-name-period">.</span>
           </h1>
           <p className="hero-bio">{bio}</p>
         </div>

@@ -218,7 +218,7 @@ export const VisitorCounter: React.FC<VisitorCounterProps> = ({
               <span className="metric-card-val">#{userVisits}</span>
             </div>
             <div className="metric-card">
-              <span className="metric-card-label">Real Time</span>
+              <span className="metric-card-label">Time</span>
               <span className="metric-card-val live-active">
                 <span className="pulse-tiny" />
                 {realTime || 'Loading...'}

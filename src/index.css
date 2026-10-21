@@ -470,16 +470,25 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  color: #10b981;
+  color: var(--ink);
+}
+
+[data-theme="dark"] .metric-card-val.live-active {
+  color: #ffffff;
 }
 
 .pulse-tiny {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: #10b981;
-  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
-  animation: pulse-green 1.5s infinite;
+  background-color: var(--ink);
+  box-shadow: 0 0 0 2px var(--line);
+  opacity: 0.85;
+}
+
+[data-theme="dark"] .pulse-tiny {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
 }
 
 .visitor-popover-footer {

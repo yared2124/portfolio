@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import type { TechCategory, TechItem } from '../data/portfolioData'
 import { TechIcon } from './TechIcons'
 
@@ -8,7 +8,24 @@ interface TechStackProps {
 }
 
 export const TechStack: React.FC<TechStackProps> = ({ categories = [], stack = [] }) => {
-  const [activeCategory, setActiveCategory] = useState<string>('all')
+  const [activeCategory, setActiveCategory] = useState<string>(() => {
+    if (typeof window !== 'undefined' && window.innerWidth <= 768 && categories.length > 0) {
+      return categories[0].id
+    }
+    return 'all'
+  })
+
+  // Ensure on mobile screen that 'all' switches to the first category
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768 && activeCategory === 'all' && categories.length > 0) {
+        setActiveCategory(categories[0].id)
+      }
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [categories, activeCategory])
 
   // Collect all items across categories or fallback to string stack
   const allItems: TechItem[] = useMemo(() => {
@@ -95,7 +112,7 @@ export const TechStack: React.FC<TechStackProps> = ({ categories = [], stack = [
                 key={tab.id}
                 role="tab"
                 aria-selected={isActive}
-                className={`stack-filter-pill ${isActive ? 'active' : ''}`}
+                className={`stack-filter-pill ${tab.id === 'all' ? 'stack-filter-pill-all' : ''} ${isActive ? 'active' : ''}`}
                 onClick={() => setActiveCategory(tab.id)}
               >
                 <span>{tab.label}</span>

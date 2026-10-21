@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Syne:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,400&family=Syne:wght@500;600;700;800&display=swap');
 
 :root {
   --ink: #161719;
@@ -9,6 +9,7 @@
   --line: rgba(22, 23, 25, 0.15);
   --line-strong: rgba(22, 23, 25, 0.35);
   --font-sans: 'Syne', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
   --font-mono: 'DM Mono', monospace;
   color-scheme: light;
 }
@@ -655,11 +656,12 @@ button {
 }
 
 .hero-name {
-  font-family: var(--font-sans);
-  font-size: clamp(52px, 7vw, 102px);
-  font-weight: 800;
+  font-family: var(--font-serif);
+  font-size: clamp(52px, 8.5vw, 108px);
+  font-weight: 900;
   line-height: 0.95;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
   color: var(--ink);
   margin: 0;
 }
@@ -2136,20 +2138,22 @@ button {
 .social-links {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
   margin-top: 36px;
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
 }
 
 .social-links>a {
   min-height: 120px;
-  padding: 20px;
+  padding: 22px 20px;
   display: grid;
   grid-template-columns: 1fr auto;
   align-content: space-between;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  transition: background-color 0.22s, color 0.22s;
+  border: 1px solid var(--line);
+  background-color: rgba(255, 255, 255, 0.015);
+  color: var(--ink);
+  text-decoration: none;
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .social-links>a>svg:first-child {
@@ -2161,15 +2165,24 @@ button {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  color: var(--ink);
 }
 
 .social-links>a>svg:last-child {
-  transition: transform 0.22s;
+  transition: transform 0.22s ease;
+  color: var(--ink);
 }
 
 .social-links>a:hover {
-  background-color: var(--acid);
-  color: #0b0b0c;
+  transform: translateY(-4px);
+  border-color: var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  color: var(--ink);
+}
+
+[data-theme="dark"] .social-links>a:hover {
+  border-color: var(--acid);
+  box-shadow: 4px 4px 0 var(--acid);
 }
 
 .social-links>a:hover>svg:last-child {

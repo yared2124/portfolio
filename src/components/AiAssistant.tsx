@@ -3,25 +3,41 @@ import { Icon } from './Icons'
 
 interface AiAssistantProps {
   name: string
-  defaultMessage: string
+  defaultMessage?: string
   responses: Record<string, string>
 }
 
 export const AiAssistant: React.FC<AiAssistantProps> = ({
   name,
-  defaultMessage,
   responses,
 }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [input, setInput] = useState('')
-  const [message, setMessage] = useState(defaultMessage)
+  const [userQuery, setUserQuery] = useState('')
+  const [message, setMessage] = useState('')
   const [isThinking, setIsThinking] = useState(false)
+
+  const handleReset = () => {
+    setMessage('')
+    setUserQuery('')
+    setInput('')
+    setIsThinking(false)
+  }
+
+  const handleToggle = () => {
+    if (isOpen) {
+      handleReset()
+    }
+    setIsOpen((prev) => !prev)
+  }
 
   const handleAsk = async (query: string) => {
     const trimmed = query.trim()
     if (!trimmed) return
 
+    setUserQuery(trimmed)
     setIsThinking(true)
+    setMessage('')
     setInput('')
 
     try {
@@ -82,7 +98,7 @@ export const AiAssistant: React.FC<AiAssistantProps> = ({
     <>
       <button
         className={`ai-trigger ${isOpen ? 'active' : ''}`}
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={handleToggle}
         aria-label={isOpen ? 'Close AI assistant' : 'Open AI assistant'}
       >
         <Icon name={isOpen ? 'close' : 'spark'} size={20} />
@@ -95,13 +111,42 @@ export const AiAssistant: React.FC<AiAssistantProps> = ({
             <span className="assistant-status" />
             <span>{name.toUpperCase()} / AI</span>
           </div>
-          <span>PORTFOLIO INTELLIGENCE</span>
+          <div className="assistant-head-actions">
+            {(Boolean(message) || isThinking) && (
+              <button
+                type="button"
+                className="assistant-reset-btn"
+                onClick={handleReset}
+                title="Clear conversation"
+                aria-label="Clear conversation"
+              >
+                Clear
+              </button>
+            )}
+            <span>PORTFOLIO INTELLIGENCE</span>
+          </div>
         </div>
 
-        <div className="assistant-message" tabIndex={0} role="region" aria-label="AI response">
-          <Icon name="spark" size={16} className="assistant-spark-icon" />
-          <p>{isThinking ? 'Thinking in strange loops...' : message.replace(/\*/g, '').replace(/ {2,}/g, ' ')}</p>
-        </div>
+        {(isThinking || message) ? (
+          <div className="assistant-message" tabIndex={0} role="region" aria-label="AI response">
+            <Icon name="spark" size={16} className="assistant-spark-icon" />
+            <div className="assistant-message-content">
+              {userQuery && (
+                <div className="assistant-query-tag">
+                  <span>Q:</span> {userQuery}
+                </div>
+              )}
+              <p>{isThinking ? 'Thinking in strange loops...' : message.replace(/\*/g, '').replace(/ {2,}/g, ' ')}</p>
+            </div>
+          </div>
+        ) : (
+          <div className="assistant-empty-space" aria-label="AI assistant ready">
+            <div className="assistant-empty-prompt">
+              <Icon name="spark" size={15} />
+              <span>Ask a question or select a prompt below</span>
+            </div>
+          </div>
+        )}
 
         <div className="suggestions">
           {suggestions.map((prompt) => (

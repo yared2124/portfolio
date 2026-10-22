@@ -2601,10 +2601,38 @@ button {
   flex-shrink: 0;
 }
 
-.assistant-head>div {
+.assistant-head>div:first-child {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.assistant-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.assistant-reset-btn {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  line-height: 1.2;
+}
+
+.assistant-reset-btn:hover {
+  background-color: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
 }
 
 .assistant-status {
@@ -2613,6 +2641,33 @@ button {
   border-radius: 50%;
   background-color: #6bcc3a;
   box-shadow: 0 0 0 3px rgba(107, 204, 58, 0.25);
+}
+
+.assistant-empty-space {
+  margin: 14px 0 12px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--line);
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.02);
+  padding: 16px;
+  text-align: center;
+}
+
+[data-theme='dark'] .assistant-empty-space {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.assistant-empty-prompt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
 }
 
 .assistant-message {
@@ -2629,6 +2684,27 @@ button {
   border-radius: 2px;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.5) rgba(0, 0, 0, 0.15);
+}
+
+.assistant-message-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.assistant-query-tag {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 6px;
+  display: block;
+  word-break: break-word;
+}
+
+.assistant-query-tag span {
+  font-weight: 700;
+  color: var(--acid);
+  margin-right: 4px;
 }
 
 .assistant-message::-webkit-scrollbar {
